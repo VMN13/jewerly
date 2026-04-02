@@ -110,7 +110,7 @@
 }
 
 /* Header nav stable layout */
-.header-nav {
+.header-nav, .catalog-cart-group {
   display: flex;
   align-items: center;
   gap: 14px;

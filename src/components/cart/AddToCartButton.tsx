@@ -1,7 +1,8 @@
-"use client";
+ "use client";
 
 import { useState } from "react";
 import { useCart } from "@/components/cart/CartProvider";
+import CartModal from './CartModal';
 
 type AddToCartButtonProps = {
   productId: number;
@@ -9,22 +10,28 @@ type AddToCartButtonProps = {
 
 export default function AddToCartButton({ productId }: AddToCartButtonProps) {
   const { addToCart } = useCart();
-  const [added, setAdded] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleAdd = () => {
-    if (added) return;
+    if (showModal) return;
     addToCart(productId);
-    setAdded(true);
+    setShowModal(true);
   };
 
+  const closeModal = () => setShowModal(false);
+
   return (
-    <button
-      type="button"
-      className="cart-add-btn"
-      onClick={handleAdd}
-      disabled={added}
-    >
-      {added ? "Добавлено ✓" : "Добавить в корзину"}
-    </button>
+    <>
+      <button
+        type="button"
+        className="cart-add-btn"
+        onClick={handleAdd}
+        disabled={showModal}
+      >
+        {showModal ? "Добавлено ✓" : "Добавить в корзину"}
+      </button>
+      <CartModal isOpen={showModal} onClose={closeModal} />
+    </>
   );
 }
+ 
