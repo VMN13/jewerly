@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             />
           </div>
           <div className="product-detail-content">
-            <h2>Описание</h2>
+           
             <p>{product.description}</p>
             <div className="product-actions">
               <AddToCartButton productId={product.id} />

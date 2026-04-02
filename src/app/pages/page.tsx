@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import SearchInput from '@/components/SearchInput';
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
@@ -66,7 +67,8 @@ export default function PagesIndex() {
         </div>
 
         <div className="catalog-controls">
-          <div className="catalog-sort-wrap">
+          <SearchInput />
+          <div className="catalog-sort-wrap"> 
             <span className="catalog-sort-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
                 <path

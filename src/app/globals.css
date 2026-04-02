@@ -1,8 +1,20 @@
-
 @import "tailwindcss";
 
+:root {
+  --header-height: 70px;
+  --footer-height: 80px;
+  --logo-height: 60px;
+}
 
-@media (min-width: 640px) {
+@media (max-width: 640px) {
+  :root {
+    --header-height: 12vh;
+    --footer-height: 12vh;
+    --logo-height: 10vh;
+  }
+}
+
+@media (min-width: 641px) {
   .cookie-banner {
     flex-direction: row;
     align-items: center;
@@ -10,65 +22,143 @@
   }
 }
 
-.cookie-banner p {
-  margin: 0;
-  flex: 1;
-  line-height: 1.4;
-}
 
-.cookie-link {
-  background: none;
-  border: none;
-  color: #c40000;
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: inherit;
-  padding: 0;
-}
 
-.cookie-buttons {
+/* Updated body and main */
+.app-body {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.cookie-accept {
-  background: #c40000;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  min-width: 80px;
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: var(--header-height);
+  padding-bottom: calc(var(--footer-height) + var(--logo-height));
+  /* Scrollbar styling if needed */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
 }
 
-.cookie-decline {
+.app-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.app-main::-webkit-scrollbar-track {
   background: transparent;
-  color: #fff;
-  border: 1px solid #fff;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  min-width: 80px;
 }
 
-
-
-.logo-strip-image {
-  width: min(140px, 80%);
-  height: auto;
-  filter: brightness(0) invert(1);
+.app-main::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
 }
 
+/* Fixed header/footer */
 .site-header {
   width: 100%;
-  min-height: var(--header-height);
+  height: 15vh;
   border-bottom: 1px solid #d4d4d4;
   background: #fff;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-footer {
+  width: 100%;
+  height: var(--footer-height);
+  border-top: 1px solid #d4d4d4;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
+  z-index: 40;
+}
+
+/* LogoStrip fixed position */
+.logo-strip {
+  position: fixed;
+  bottom: var(--footer-height);
+  left: 0;
+  right: 0;
+  height: var(--logo-height);
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  z-index: 30;
+}
+
+.logo-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-strip-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header nav stable layout */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 100%;
+  min-height: 48px;
+}
+
+.header-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.header-nav-badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  background: #c40000;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-nav-link:has(.header-nav-badge[data-count]:not([data-count="0"])) .header-nav-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-count="0"] {
+  display: none;
+}
+
+/* Rest of existing CSS ... */
+.logo-strip-image {
+  width: min(140px, 80%);
+  height: auto;
+  filter: brightness(0) invert(1);
 }
 
 .header-inner {
@@ -77,10 +167,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  height: 100%;
 }
 
 .brand {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: 7vh;
   font-weight: 700;
   color: #111;
   text-decoration: none;
@@ -88,97 +179,6 @@
 
 .mobile-menu-btn {
   display: none;
-  width: 38px;
-  height: 38px;
-  border: 1px solid #111;
-  border-radius: 10px;
-  background: #fff;
-  padding: 8px;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.mobile-menu-btn span {
-  width: 16px;
-  height: 2px;
-  background: #111;
-  border-radius: 999px;
-}
-
-.header-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-/* Контейнер поиска с автоподсказкой */
-.header-search {
-  position: relative;
-  width: min(420px, 42vw);
-  min-width: 220px;
-}
-
-.header-search-input {
-  width: 100%;
-  border: 1px solid #d4d4d4;
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 0.92rem;
-  line-height: 1.2;
-  background: transparent;
-  color: transparent;
-  caret-color: #111;
-  position: relative;
-  z-index: 2;
-}
-
-.header-search-input::placeholder {
-  color: #888;
-}
-
-.header-search-input:focus {
-  outline: none;
-  border-color: #888;
-}
-
-/* Наложение автоподсказки поиска: typed текст + ghost серый */
-.header-search-overlay {
-  position: absolute;
-  inset: 0;
-  border: 1px solid #d4d4d4;
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 0.92rem;
-  line-height: 1.2;
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-  z-index: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  gap: 0;
-}
-
-header-search-overlay {
-  display: flex;
-  align-items: center;
-}
-header-search-overlay .typed {
-  color: #111;
-}
-
-.header-search-overlay .ghost {
-  color: #999;
-}
-
-.mobile-sidebar-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
   z-index: 60;
@@ -406,6 +406,7 @@ header-search-overlay .typed {
   display: flex;
   justify-content: center;
   padding: clamp(18px, 3vw, 36px) 0;
+  margin-top: -200px;
 }
 
 .catalog-container,
@@ -438,6 +439,7 @@ header-search-overlay .typed {
   border: 1px solid #111;
   padding: 6px 12px;
   transition: 0.2s ease;
+  border-radius: 10px;
 }
 
 .catalog-link:hover {
@@ -501,7 +503,7 @@ header-search-overlay .typed {
   color: #fff;
   text-decoration: none;
   display: block;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 40px);
+  min-height: calc(80vh - var(--header-height) - var(--footer-height) - 40px);
   overflow: hidden;
   border-radius: 20px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -608,7 +610,7 @@ header-search-overlay .typed {
 }
 
 .product-card-link:hover .product-card {
-  transform: translateY(-6px);
+  transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   border-color: #111;
 }
@@ -946,14 +948,15 @@ header-search-overlay .typed {
 
 @media (max-width: 640px) {
   :root {
-    --header-height: 12vh;
+    --header-height: 25vh;
     --footer-height: 12vh;
+    overflow-x: none;
   }
 
   .header-inner,
   .footer-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
   }
 
@@ -961,6 +964,7 @@ header-search-overlay .typed {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
     padding: 8px 0;
+    background-color: #c40000;
   }
 
   .logo-strip-item {
@@ -1004,10 +1008,15 @@ header-search-overlay .typed {
   }
 
   .header-search {
-    width: 100%;
+    display: flex;
+    width:80%;
+    margin: auto;
+    justify-content: start;
     min-width: 0;
     order: 3;
   }
+
+  
 
   .header-nav {
     display: none;
@@ -1039,7 +1048,7 @@ header-search-overlay .typed {
   }
 
   .category-list {
-    gap: 12px;
+    gap: 0px;
   }
 
   .category-card {
