@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { products } from "@/data/products";
+import { 
+  ringsBracelets, 
+  earringsPendants, 
+  chainsNecklaces, 
+  newArrivals,
+  allProducts 
+} from "@/data/products";
 import AddToCartButton from "@/components/cart/AddToCartButton";
 
 type ProductPageProps = {
@@ -10,10 +16,15 @@ type ProductPageProps = {
   }>;
 };
 
+// ✅ Функция поиска товара по ID во всех массивах
+const findProductById = (id: number) => {
+  return allProducts.find((item) => item.id === id);
+};
+
 export default async function ProductPage({ params }: ProductPageProps) {
   const { id } = await params;
   const productId = Number(id);
-  const product = products.find((item) => item.id === productId);
+  const product = findProductById(productId);
 
   if (!product) {
     notFound();
@@ -38,12 +49,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
             />
           </div>
           <div className="product-detail-content">
-           
             <p>{product.description}</p>
             <div className="product-actions">
               <AddToCartButton productId={product.id} />
               <Link href="/pages" className="catalog-link product-back-link">
-                 Назад в каталог
+                Назад в каталог
               </Link>
             </div>
           </div>

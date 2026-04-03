@@ -32,11 +32,10 @@ export default function CartModal({ isOpen, onClose }: { isOpen: boolean; onClos
         <div className="cart-modal-head">
           <h3>Товар добавлен в корзину!</h3>
           <button className="cart-modal-close" onClick={onClose}>
-            ×
+            X
           </button>
         </div>
         <div className="cart-modal-body">
-          <p>Количество товаров в корзине: <strong>{totalItems}</strong></p>
           <button className="cart-modal-btn" onClick={goToCart}>
             Перейти в корзину
           </button>

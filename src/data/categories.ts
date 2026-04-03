@@ -7,32 +7,32 @@ export type CategoryCard = {
 };
 
 export const categories: CategoryCard[] = [
-  {
+  {   
     id: 1,
     title: "Кольца и браслеты",
     subtitle: "Минималистичные формы и строгая геометрия",
-    image: "/next.svg",
-    href: "/pages",
+    image: "/ringsandbracelets.jpg",
+    href: "/pages/rings-bracelets", // ✅ Отдельная страница
   },
   {
     id: 2,
     title: "Серьги и подвески",
     subtitle: "Контрастные акценты в монохромной эстетике",
-    image: "/globe.svg",
-    href: "/pages",
+    image: "/earringsandpendants.jpg",
+    href: "/pages/earrings-pendants", // ✅ Отдельная страница
   },
   {
     id: 3,
     title: "Цепи и колье",
     subtitle: "Сдержанный дизайн для повседневного образа",
-    image: "/window.svg",
-    href: "/pages",
+    image: "/bracelets.jpg",
+    href: "/pages/chains-necklaces", // ✅ Отдельная страница
   },
   {
     id: 4,
     title: "Новые поступления",
     subtitle: "Актуальные модели из текущей коллекции",
-    image: "/vercel.svg",
-    href: "/pages",
+    image: "/new.jpg",
+    href: "/pages/new-arrivals", // ✅ Отдельная страница
   },
 ];

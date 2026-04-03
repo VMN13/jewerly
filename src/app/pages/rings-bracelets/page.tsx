@@ -4,15 +4,15 @@ import { useEffect, useMemo, useState } from "react";
 import SearchInput from '@/components/SearchInput';
 import Image from "next/image";
 import Link from "next/link";
-import { allProducts } from "@/data/products"; // ✅ Используем allProducts
+import { ringsBracelets } from "@/data/products";
 
 type SortMode = "date_desc" | "date_asc" | "name_asc" | "name_desc";
 
-export default function PagesIndex() {
+export default function RingsBraceletsPage() {
   const [sortMode, setSortMode] = useState<SortMode>("date_desc");
 
   const sortedProducts = useMemo(() => {
-    const list = [...allProducts]; // ✅ allProducts вместо products
+    const list = [...ringsBracelets];
 
     switch (sortMode) {
       case "date_asc":
@@ -27,6 +27,7 @@ export default function PagesIndex() {
     }
   }, [sortMode]);
 
+  // ... остальная логика анимации остается такой же
   useEffect(() => {
     const cards = document.querySelectorAll<HTMLElement>(".product-card");
     const observer = new IntersectionObserver(
@@ -48,8 +49,8 @@ export default function PagesIndex() {
     <section className="catalog-section">
       <div className="catalog-container">
         <div className="catalog-head">
-          <h1>Каталог товаров</h1>
-          <Link href="/" className="catalog-link">Назад к разделам</Link>
+          <h1>Кольца и браслеты</h1>
+          <Link href="/" className="catalog-link">← Назад к разделам</Link>
         </div>
 
         <div className="catalog-controls">
@@ -65,8 +66,8 @@ export default function PagesIndex() {
               onChange={(e) => setSortMode(e.target.value as SortMode)}
               className="catalog-sort-select catalog-sort-select-compact"
             >
-              <option value="date_desc">Price: ↓</option>
-              <option value="date_asc">Price: ↑</option>
+              <option value="date_desc">По дате: новые</option>
+              <option value="date_asc">По дате: старые</option>
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
             </select>
