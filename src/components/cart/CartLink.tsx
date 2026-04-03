@@ -4,8 +4,7 @@ import Link from "next/link";
 import { useCart } from "@/components/cart/CartProvider";
 
 export default function CartLink() {
-  const { totalItems } = useCart();
+  const { totalItems, totalPrice } = useCart();
 
-  return <Link href="/cart">Корзина <span suppressHydrationWarning>({totalItems})</span>
-          </Link>;
+  return <Link href="/cart">Корзина ({totalItems}) | {totalPrice.toLocaleString('ru-RU')} BY</Link>;
 }

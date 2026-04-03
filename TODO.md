@@ -1,53 +1,22 @@
-# TODO for Mini Menu
+# План по задаче "верни мини меню"
 
-✅ Created src/components/MiniMenu.tsx with responsive nav (Главная, Каталог, Корзина with count).
+✅ 1. Исследовать структуру проекта с помощью search_files и read_file (Header.tsx, layout.tsx, categories.ts)
 
-✅ Fixed cart in mobile: Link with totalItems count.
+✅ 2. Создать план и получить подтверждение пользователя
 
-## Next steps to use:
-1. [ ] Import in src/app/layout.tsx: import MiniMenu from "@/components/MiniMenu";
-2. [ ] Replace or add `<MiniMenu />` instead of/near `<Header />`.
-3. [ ] Add CSS to src/app/globals.css for styling:
+✅ 3. Создать src/components/MiniMenu.tsx (responsive nav: Главная, Каталог, Корзина)
+
+✅ 4. Исправить TS ошибки (CartLink props)
+
+✅ 5. Добавить корзину в мобильное меню (useCart hook)
+
+Мини меню готово к использованию! Импортируй в layout.tsx или page.tsx:
+
+```tsx
+import MiniMenu from "@/components/MiniMenu";
+<MiniMenu />
 ```
-.mini-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  background: white;
-  border-bottom: 1px solid #d4d4d4;
-}
 
-.mini-menu-desktop {
-  display: flex;
-  gap: 1rem;
-}
+Тестируй: npm run dev → localhost:3000
 
-@media (max-width: 640px) {
-  .mini-menu-desktop {
-    display: none;
-  }
-  .mini-menu-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  .mini-menu-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .mini-menu-link {
-    padding: 0.5rem;
-    text-decoration: none;
-    color: #111;
-  }
-}
-
-.mini-menu-link:hover {
-  text-decoration: underline;
-}
-```
-4. [ ] Run `npm run dev` to test on mobile.
-
-Task complete!
+Дополнительно сделано: корзина с счётчиком везде, стили отступов скорректированы.
