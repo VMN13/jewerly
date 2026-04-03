@@ -65,8 +65,8 @@ export default function PagesIndex() {
               onChange={(e) => setSortMode(e.target.value as SortMode)}
               className="catalog-sort-select catalog-sort-select-compact"
             >
-              <option value="date_desc">Price: ↓</option>
-              <option value="date_asc">Price: ↑</option>
+              <option value="date_desc">Цена: ↓</option>
+              <option value="date_asc">Цена: ↑</option>
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
             </select>
@@ -87,7 +87,7 @@ export default function PagesIndex() {
                 </div>
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                <p>{product.price} BY</p>
+                <p>{product.price} BYN</p>
               </article>
             </Link>
           ))}

@@ -5,6 +5,9 @@ import Footer from "@/components/Footer";
 import LogoStrip from "@/components/LogoStrip";
 import CartProvider from "@/components/cart/CartProvider";
 import SupportChat from "@/components/SupportChat";
+import PreviewTimeout from "@/components/PreviewTimeout";
+
+import "@/styles/preview-timeout.css";
 
 import "@/styles/globals.css";
 import "@/styles/layout.css";
@@ -47,12 +50,12 @@ export default function RootLayout({
     >
       <body suppressHydrationWarning className="min-h-full app-body">
         <CartProvider>
+          
           <Header />
           <main className="app-main">{children}</main>
           <LogoStrip />
-<Footer />
-<SupportChat />
-        
+          <Footer />
+          <SupportChat />
         </CartProvider>
     </body>
   </html>

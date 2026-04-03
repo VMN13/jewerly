@@ -60,6 +60,7 @@
   justify-content: center;
   min-height: 42px;
   border-radius: 10px;
+  width: 100%;
 }
 
 .cart-add-btn:disabled {

@@ -28,27 +28,53 @@
   }
 
   .catalog-controls {
-    justify-content: flex-start;
-    margin-bottom: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .catalog-sort-wrap {
-    gap: 6px;
+  .header-search-input {
+    width: 280px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
   }
+
 
   .catalog-sort-icon {
-    width: 16px;
-    height: 16px;
+    width: 28px;
+    height: 28px;
   }
 
   .catalog-sort-select {
-    width: auto;
-    min-width: 84px;
-    max-width: 120px;
-    padding: 6px 8px;
-    font-size: 0.82rem;
-    border-radius: 8px;
+    width: 200px;
+    font-size: 20px;
+    padding: 10px;
+    height: 50px;
   }
+
+
+  .cart-info {
+    display: inline-flex;
+    font-family: Playfair Display, Georgia, Times New Roman, serif;
+  }
+
+  .cart-badge {
+    color: rgb(170, 9, 9);
+    font-weight: 900;
+   
+  }
+
+a.cart {
+  position: fixed;
+  right: 20px;
+  top:10px;
+  border: 1px solid #d4d4d4;
+  padding: 10px;
+  border-radius: 20px;
+  
+}
 
   .catalog-sort-select-compact {
     text-align: center;
