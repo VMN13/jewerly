@@ -7,6 +7,7 @@ import { useCart } from "@/components/cart/CartProvider";
 export default function CartPage() {
   const {
     cartProducts,
+    totalPrice,
     addToCart,
     decreaseFromCart,
     removeFromCart,
@@ -90,6 +91,12 @@ export default function CartPage() {
               ))}
             </div>
 
+            <div className="cart-summary">
+              <div className="cart-summary-item">
+                <span>Итого:</span>
+<strong>{totalPrice.toLocaleString('ru-RU')} BY</strong>
+              </div>
+            </div>
             <div className="cart-footer-actions">
               <a
                 href="https://t.me/VMNid"
@@ -97,7 +104,7 @@ export default function CartPage() {
                 rel="noopener noreferrer"
                 className="cart-buy-btn"
               >
-                Купить
+                Купить за {totalPrice.toLocaleString('ru-RU')} BY
               </a>
               <button type="button" className="cart-clear-btn" onClick={clearCart}>
                 Очистить корзину

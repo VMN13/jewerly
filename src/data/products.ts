@@ -5,6 +5,7 @@ export type Product = {
   description: string;
   createdAt: string;
   image: string;
+  price: number;
 };
 
 // 1️⃣ КОЛЬЦА И БРАСЛЕТЫ (ТОЛЬКО ID 1-5)
@@ -15,31 +16,35 @@ export const ringsBracelets: Product[] = [
     category: "rings-bracelets",
     description: "Элегантное кольцо с центральным бриллиантом в классическом стиле.",
     createdAt: "2024-01-03",
-    image: "/images/rings-bracelets/ring-diamond.jpg",
+    image: "/images/rings/Brilliant.jpg",
+    price: 400
   },
   {
     id: 2,
-    name: "Тонкий браслет",
+    name: "Sapfir",
     category: "rings-bracelets",
-    description: "Деликатный браслет с утонченным плетением для ежедневной носки.",
+    description: "Сапфир от RS",
     createdAt: "2024-01-08",
-    image: "/images/rings-bracelets/bracelet-thin.jpg",
+    image: "/images/rings/Sapfir.jpg",
+    price: 2000
   },
   {
     id: 3,
-    name: "Мужское золотое кольцо",
+    name: "Кольцо с изумрудом",
     category: "rings-bracelets",
-    description: "Массивное кольцо с текстурой для сильного характера.",
+    description: "Изумруд от CHAMOVSKIKH.",
     createdAt: "2024-02-10",
-    image: "/images/rings-bracelets/ring-men.jpg",
+    image: "/images/rings/Izumrud.png",
+    price: 600
   },
   {
     id: 4,
-    name: "Браслет манжет",
+    name: "Кольцо с рубином",
     category: "rings-bracelets",
-    description: "Браслет-манжет с гравировкой в стиле ар-деко.",
+    description: "Красный рубин в золотой оправе с боковыми камнями.",
     createdAt: "2024-03-06",
-    image: "/images/rings-bracelets/bracelet-wide.jpg",
+    image: "/images/rings/Rubin.jpg",
+    price: 900
   },
   {
     id: 5,
@@ -47,7 +52,8 @@ export const ringsBracelets: Product[] = [
     category: "rings-bracelets",
     description: "Синий топаз в золотой оправе с боковыми камнями.",
     createdAt: "2024-03-22",
-    image: "/images/rings-bracelets/ring-topaz.jpg",
+    image: "/images/rings/Topaz.jpg",
+    price: 700
   }
 ];
 
@@ -59,31 +65,35 @@ export const earringsPendants: Product[] = [
     category: "earrings-pendants",
     description: "Минималистичные серьги с бриллиантами для любого образа.",
     createdAt: "2024-01-15",
-    image: "/images/earrings-pendants/earrings-studs.jpg",
+    image: "/images/ear/goldSerg.jpg",
+    price: 100
   },
   {
     id: 7,
-    name: "Подвеска с сапфиром",
+    name: "Серьги из белого золота с сапфирами и бриллиантами",
     category: "earrings-pendants",
     description: "Изысканная подвеска с синим сапфиром на золотой цепочке.",
     createdAt: "2024-01-20",
-    image: "/images/earrings-pendants/pendant-sapphire.jpg",
+    image: "/images/ear/WhiteGold.jpg",
+    price: 700
   },
   {
     id: 8,
-    name: "Длинные золотые серьги",
+    name: "Серьги из белого золота с турмалинами 9.55 ct и бриллиантами",
     category: "earrings-pendants",
     description: "Потрясающие длинные серьги с каплей для вечернего выхода.",
     createdAt: "2024-02-27",
-    image: "/images/earrings-pendants/earrings-long.jpg",
+    image: "/images/ear/Turmalin.jpg",
+    price: 1000
   },
   {
     id: 9,
-    name: "Подвеска с рубином",
+    name: "Серьги из желтого золота с бриллиантами",
     category: "earrings-pendants",
     description: "Красная подвеска-рубин на тонкой золотой цепи.",
     createdAt: "2024-03-14",
-    image: "/images/earrings-pendants/pendant-ruby.jpg",
+    price: 1000,
+    image: "/images/ear/YellowGold.jpg",
   },
   {
     id: 10,
@@ -92,6 +102,7 @@ export const earringsPendants: Product[] = [
     description: "Комфортные клипсы без прокола с камнями.",
     createdAt: "2024-04-25",
     image: "/images/earrings-pendants/clips.jpg",
+    price: 200
   }
 ];
 
@@ -104,6 +115,7 @@ export const chainsNecklaces: Product[] = [
     description: "Длинное колье с крупными звеньями в современном дизайне.",
     createdAt: "2024-02-02",
     image: "/images/chains-necklaces/necklace-gold.jpg",
+    price: 200
   },
   {
     id: 12,
@@ -112,6 +124,7 @@ export const chainsNecklaces: Product[] = [
     description: "Трендовый чокер с гравировкой для смелого образа.",
     createdAt: "2024-02-18",
     image: "/images/chains-necklaces/choker.jpg",
+    price: 3000
   },
   {
     id: 13,
@@ -120,6 +133,7 @@ export const chainsNecklaces: Product[] = [
     description: "Браслет с бриллиантами в стиле 'теннис'.",
     createdAt: "2024-03-29",
     image: "/images/chains-necklaces/tennis-bracelet.jpg",
+    price: 4000
   },
   {
     id: 14,
@@ -128,6 +142,7 @@ export const chainsNecklaces: Product[] = [
     description: "Классическая цепочка с крупными звеньями.",
     createdAt: "2024-04-05",
     image: "/images/chains-necklaces/chain-gold.jpg",
+    price: 9000
   },
   {
     id: 15,
@@ -136,6 +151,7 @@ export const chainsNecklaces: Product[] = [
     description: "Крест из золота с бриллиантами.",
     createdAt: "2024-05-15",
     image: "/images/chains-necklaces/cross-pendant.jpg",
+    price: 4000
   }
 ];
 
@@ -148,6 +164,7 @@ export const newArrivals: Product[] = [
     description: "Элегантное колье с натуральным жемчугом.",
     createdAt: "2024-04-12",
     image: "/images/new-arrivals/pearl-necklace.jpg",
+    price: 6000
   },
   {
     id: 17,
@@ -156,6 +173,7 @@ export const newArrivals: Product[] = [
     description: "Пара обручальных колец с бриллиантами.",
     createdAt: "2024-04-20",
     image: "/images/new-arrivals/wedding-ring.jpg",
+    price: 3000
   },
   {
     id: 18,
@@ -164,6 +182,7 @@ export const newArrivals: Product[] = [
     description: "Браслет с подвесками-шармами в золоте.",
     createdAt: "2024-05-01",
     image: "/images/new-arrivals/charm-bracelet.jpg",
+    price: 4000
   },
   {
     id: 19,
@@ -172,6 +191,7 @@ export const newArrivals: Product[] = [
     description: "Три бриллианта в ряд на золотом кольце.",
     createdAt: "2024-05-10",
     image: "/images/new-arrivals/triolli-ring.jpg",
+    price: 5000
   },
   {
     id: 20,
@@ -180,6 +200,7 @@ export const newArrivals: Product[] = [
     description: "Мужские часы с золотым корпусом и браслетом.",
     createdAt: "2024-05-20",
     image: "/images/new-arrivals/gold-watch.jpg",
+    price: 9000
   }
 ];
 

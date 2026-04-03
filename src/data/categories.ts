@@ -9,21 +9,21 @@ export type CategoryCard = {
 export const categories: CategoryCard[] = [
   {   
     id: 1,
-    title: "Кольца и браслеты",
+    title: "Кольца",
     subtitle: "Минималистичные формы и строгая геометрия",
     image: "/ringsandbracelets.jpg",
     href: "/pages/rings-bracelets", // ✅ Отдельная страница
   },
   {
     id: 2,
-    title: "Серьги и подвески",
+    title: "Серьги",
     subtitle: "Контрастные акценты в монохромной эстетике",
     image: "/earringsandpendants.jpg",
     href: "/pages/earrings-pendants", // ✅ Отдельная страница
   },
   {
     id: 3,
-    title: "Цепи и колье",
+    title: "Колье",
     subtitle: "Сдержанный дизайн для повседневного образа",
     image: "/bracelets.jpg",
     href: "/pages/chains-necklaces", // ✅ Отдельная страница

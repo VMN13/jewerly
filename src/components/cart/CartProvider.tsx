@@ -14,6 +14,7 @@ type CartProduct = {
   name: string;
   image: string;
   description: string;
+  price: number;
 };
 
 type CartContextValue = {
@@ -21,6 +22,7 @@ type CartContextValue = {
   cartProducts: CartProduct[];
   totalItems: number;
   totalUniqueItems: number;
+  totalPrice: number;
   addToCart: (productId: number) => void;
   removeFromCart: (productId: number) => void;
   decreaseFromCart: (productId: number) => void;
@@ -112,6 +114,7 @@ export default function CartProvider({
           name: product.name,
           image: product.image,
           description: product.description,
+          price: (product as any).price || 0,
         };
       })
       .filter((item): item is CartProduct => item !== null);
@@ -123,6 +126,7 @@ export default function CartProvider({
   );
 
   const totalUniqueItems = useMemo(() => items.length, [items]);
+  const totalPrice = useMemo(() => cartProducts.reduce((sum, item) => sum + (item.price * item.quantity), 0), [cartProducts]);
 
   const value = useMemo<CartContextValue>(
     () => ({
@@ -130,12 +134,13 @@ export default function CartProvider({
       cartProducts,
       totalItems,
       totalUniqueItems,
+      totalPrice,
       addToCart,
       removeFromCart,
       decreaseFromCart,
       clearCart,
     }),
-    [items, cartProducts, totalItems, totalUniqueItems],
+    [items, cartProducts, totalItems, totalUniqueItems, totalPrice],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

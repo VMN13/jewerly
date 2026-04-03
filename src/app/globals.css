@@ -540,6 +540,7 @@
   justify-content: center;
   text-align: center;
   padding: clamp(16px, 4vw, 48px);
+  
 }
 
 .category-card-content h2 {
@@ -569,6 +570,14 @@
   );
   z-index: 1;
 }
+
+
+
+
+
+
+
+
 
 .product-grid {
   display: grid;
@@ -620,12 +629,14 @@
   border: 1px solid #e5e5e5;
   background: #f7f7f7;
   display: grid;
+  border-radius: 20px;
   place-items: center;
 }
 
 .product-image {
-  width: 72%;
+  width: 100%;
   height: auto;
+  border-radius: 20px;
 }
 
 .product-card h2 {
@@ -694,10 +705,12 @@
   background: #f7f7f7;
   display: grid;
   place-items: center;
+  border-radius: 20px;
 }
 
 .product-detail-image {
-  width: 72%;
+  width: 100%;
+  border-radius: 20px;
   height: auto;
 }
 
