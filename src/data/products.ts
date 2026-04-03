@@ -128,30 +128,30 @@ export const chainsNecklaces: Product[] = [
   },
   {
     id: 13,
-    name: "Браслет теннис",
+    name: "Колье «Сердце» из красного золота с аметистом",
     category: "chains-necklaces",
     description: "Браслет с бриллиантами в стиле 'теннис'.",
     createdAt: "2024-03-29",
-      image: "/images/necklace/necklaceBrilliant.jpg",
+      image: "/images/necklace/Ametist.jpg",
     price: 4000
   },
   {
     id: 14,
-    name: "Золотая цепочка",
+    name: "Колье из красного золота с бриллиантами",
     category: "chains-necklaces",
     description: "Классическая цепочка с крупными звеньями.",
     createdAt: "2024-04-05",
-      image: "/images/necklace/necklaceBrilliant.jpg",
+      image: "/images/necklace/RedGold.jpg",
     price: 9000
   },
   {
     id: 15,
-    name: "Подвеска крест",
+    name: "Колье из желтого золота с изумрудами и бриллиантами",
     category: "chains-necklaces",
     description: "Крест из золота с бриллиантами.",
     createdAt: "2024-05-15",
-      image: "/images/necklace/necklaceBrilliant.jpg",
-    price: 4000
+      image: "/images/necklace/Izumrud.jpg",
+    price: 40000  
   }
 ];
 
@@ -159,48 +159,48 @@ export const chainsNecklaces: Product[] = [
 export const newArrivals: Product[] = [
   {
     id: 16,
-    name: "Колье с жемчугом",
+    name: "Яйцо-шкатулка",
     category: "new-arrivals",
-    description: "Элегантное колье с натуральным жемчугом.",
+    description: "Золочение Гильошированная эмаль",
     createdAt: "2024-04-12",
-    image: "/images/necklace/necklaceBrilliant.jpg",
+    image: "/images/Accessories/Eggs.jpg",
     price: 6000
   },
   {
     id: 17,
-    name: "Обручальное кольцо",
+    name: "Ситечко из серебра",
     category: "new-arrivals",
-    description: "Пара обручальных колец с бриллиантами.",
+    description: "Серебро 925 пробы",
     createdAt: "2024-04-20",
-    image: "/images/new-arrivals/wedding-ring.jpg",
-    price: 3000
+    image: "/images/Accessories/Sitechko.jpg",
+    price: 1000
   },
   {
     id: 18,
-    name: "Браслет шарм",
+    name: "Набор кофейных ложек «Элегант»",
     category: "new-arrivals",
-    description: "Браслет с подвесками-шармами в золоте.",
+    description: "Серебро без золочения",
     createdAt: "2024-05-01",
-    image: "/images/new-arrivals/charm-bracelet.jpg",
-    price: 4000
+    image: "/images/Accessories/Spoons.jpeg",
+    price: 1000
   },
   {
     id: 19,
-    name: "Кольцо триолли",
+    name: "Медальон для животных из серебра с бриллиантом",
     category: "new-arrivals",
-    description: "Три бриллианта в ряд на золотом кольце.",
+    description: "Гильошированная эмаль Золочение (позолота)",
     createdAt: "2024-05-10",
-    image: "/images/new-arrivals/triolli-ring.jpg",
-    price: 5000
+    image: "/images/Accessories/Medal.jpg",
+    price: 400
   },
   {
     id: 20,
-    name: "Золотые часы",
+    name: "Молочник из серебра",
     category: "new-arrivals",
-    description: "Мужские часы с золотым корпусом и браслетом.",
+    description: "Золочение (позолота) Эмалево-филигранная техника",
     createdAt: "2024-05-20",
-    image: "/images/new-arrivals/gold-watch.jpg",
-    price: 9000
+    image: "/images/Accessories/Molochnick.jpg",
+    price: 900
   }
 ];
 

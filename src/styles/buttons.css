@@ -86,3 +86,16 @@
   gap: 10px;
   width: 100%;
 }
+
+/* Добавить в конец buttons.css */
+.cart-buy-btn {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.cart-buy-btn:hover {
+  background: #c40000 !important;
+  border-color: #c40000 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(196, 0, 0, 0.3);
+}

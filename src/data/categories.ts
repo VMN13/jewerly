@@ -30,7 +30,7 @@ export const categories: CategoryCard[] = [
   },
   {
     id: 4,
-    title: "Новые поступления",
+    title: "Аксессуары",
     subtitle: "Актуальные модели из текущей коллекции",
     image: "/new.jpg",
     href: "/pages/new-arrivals", // ✅ Отдельная страница

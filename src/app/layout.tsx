@@ -6,17 +6,17 @@ import LogoStrip from "@/components/LogoStrip";
 import CartProvider from "@/components/cart/CartProvider";
 import SupportChat from "@/components/SupportChat";
 
-import "./globals.css";
-import "./layout.css";
-import "./header.css";
-import "./mobile-menu.css";
-import "./support-chat.css";
-import "./catalog.css";
-import "./products.css";
-import "./product-page.css";
-import "./cart.css";
-import "./buttons.css";
-import "./responsive.css";
+import "@/styles/globals.css";
+import "@/styles/layout.css";
+import "@/styles/header.css";
+import "@/styles/mobile-menu.css";
+import "@/styles/support-chat.css";
+import "@/data/catalog.css";
+import "@/styles/products.css";
+import "@/styles/product-page.css";
+import "@/styles/cart.css";
+import "@/styles/buttons.css";
+import "@/styles/responsive.css";
 
 
 const geistSans = Geist({

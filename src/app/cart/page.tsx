@@ -14,6 +14,24 @@ export default function CartPage() {
     clearCart,
   } = useCart();
 
+  const handleTelegramOrder = () => {
+    const message = generateTelegramMessage();
+    const telegramUrl = `https://t.me/VMNid?text=${encodeURIComponent(message)}`;
+    window.open(telegramUrl, '_blank');
+  };
+
+  const generateTelegramMessage = (): string => {
+    if (cartProducts.length === 0) return "Хочу заказать ювелирные изделия!";
+
+    const itemsList = cartProducts
+      .map((item) => 
+        `${item.name} (${item.quantity} шт.) - ${item.price.toLocaleString('ru-RU')} BY`
+      )
+      .join('\n');
+
+    return `🛒 Заказ из корзины:\n\n${itemsList}\n\n💰 Итого: ${totalPrice.toLocaleString('ru-RU')} BY\n\n📞 Укажите способ доставки и оплаты`;
+  };
+
   return (
     <section className="cart-page-section">
       <div className="cart-page-container">
@@ -25,7 +43,17 @@ export default function CartPage() {
         </div>
 
         {cartProducts.length === 0 ? (
-          <div className="cart-empty">Корзина пуста</div>
+          <div className="cart-empty">
+            Корзина пуста
+            <br />
+            <button 
+              onClick={handleTelegramOrder}
+              className="cart-buy-btn mt-4"
+              style={{ display: 'block', margin: '1rem auto 0' }}
+            >
+              Написать в Telegram
+            </button>
+          </div>
         ) : (
           <>
             <div className="cart-list">
@@ -94,19 +122,23 @@ export default function CartPage() {
             <div className="cart-summary">
               <div className="cart-summary-item">
                 <span>Итого:</span>
-<strong>{totalPrice.toLocaleString('ru-RU')} BY</strong>
+                <strong>{totalPrice.toLocaleString('ru-RU')} BY</strong>
               </div>
             </div>
+            
             <div className="cart-footer-actions">
-              <a
-                href="https://t.me/VMNid"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
                 className="cart-buy-btn"
+                onClick={handleTelegramOrder}
               >
-                Купить за {totalPrice.toLocaleString('ru-RU')} BY
-              </a>
-              <button type="button" className="cart-clear-btn" onClick={clearCart}>
+                💬 Заказать в Telegram ({totalPrice.toLocaleString('ru-RU')} BY)
+              </button>
+              <button 
+                type="button" 
+                className="cart-clear-btn" 
+                onClick={clearCart}
+              >
                 Очистить корзину
               </button>
             </div>
