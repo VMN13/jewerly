@@ -36,8 +36,8 @@
   scrollbar-color: #ccc transparent;
 }
 
-.app-main::-webkit-scrollbar {
-  width: 6px;
+.app-main {
+  overflow-x: visible;
 }
 .app-main::-webkit-scrollbar-track {
   background: transparent;

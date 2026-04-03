@@ -19,12 +19,11 @@
     background-color: #c40000;
   }
 
-  .logo-strip-item {
-    min-height: 44px;
-  }
+  
 
   .logo-strip-image {
     width: min(100px, 88%);
+    border-radius: 40px;
   }
 
   .catalog-controls {

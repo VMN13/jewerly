@@ -6,7 +6,6 @@ import LogoStrip from "@/components/LogoStrip";
 import CartProvider from "@/components/cart/CartProvider";
 import SupportChat from "@/components/SupportChat";
 
-
 import "@/styles/preview-timeout.css";
 
 import "@/styles/globals.css";
@@ -20,7 +19,6 @@ import "@/styles/product-page.css";
 import "@/styles/cart.css";
 import "@/styles/buttons.css";
 import "@/styles/responsive.css";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,18 +44,18 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body suppressHydrationWarning className="min-h-full app-body">
+      <body suppressHydrationWarning className="app-body">
         <CartProvider>
-          
           <Header />
           <main className="app-main">{children}</main>
           <LogoStrip />
-          <Footer />
-          <SupportChat />
+<Footer />
+<SupportChat />
         </CartProvider>
-    </body>
-  </html>
-);
+      </body>
+    </html>
+  );
 }
+

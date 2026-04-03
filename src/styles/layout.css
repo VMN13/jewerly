@@ -1,7 +1,7 @@
 .app-body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+
 }
 
 .app-main {
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  position: sticky;
+  position: relative;
   bottom: 0;
   z-index: 40;
   min-height: var(--footer-height);

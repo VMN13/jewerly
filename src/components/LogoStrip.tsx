@@ -3,7 +3,7 @@ import Image from "next/image";
 const logos = [
   { src: "/next.svg", alt: "Next.js Logo" },
   { src: "/vercel.svg", alt: "Vercel Logo" },
-  { src: "/globe.svg", alt: "Globe Logo" },
+  { src: "/cart-icon.svg", alt: "Globe Logo" },
 ];
 
 export default function LogoStrip() {
