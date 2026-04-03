@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -16,7 +18,7 @@ type ProductPageProps = {
   }>;
 };
 
-// ✅ Функция поиска товара по ID во всех массивах
+// Функция поиска товара по ID
 const findProductById = (id: number) => {
   return allProducts.find((item) => item.id === id);
 };
@@ -60,6 +62,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         </article>
       </div>
+      {/* JS для запрета скролла */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          document.body.classList.add('has-no-scroll');
+          document.documentElement.classList.add('has-no-scroll');
+          window.scrollTo(0, 0);
+        `
+      }} />
     </section>
   );
 }
+

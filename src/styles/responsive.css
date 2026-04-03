@@ -5,10 +5,7 @@
 }
 
 @media (max-width: 640px) {
-  .app-main {
-    padding-bottom: calc(var(--footer-height) + var(--logo-height) + 20px);
-  }
-
+ 
   .header-inner,
   .footer-inner {
     flex-direction: column;
@@ -83,9 +80,30 @@
   }
 
   .catalog-head {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    color: #111;
+    font-style: italic; 
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
   }
+
+  .catalog-head h1 {
+    font-size: 30px;
+  }
+
+  .catalog-link {
+  color: #111;
+  text-decoration: none;
+ border: 1px solid #d4d4d4;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+  width: 30vh;
+}
 
   .category-list {
     gap: 0px;

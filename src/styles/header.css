@@ -8,6 +8,15 @@
   letter-spacing: -0.02em;
 }
 
+.brand::first-letter {
+  color: rgb(170, 9, 9);
+  font-weight: 900;
+  
+}
+
+
+
+
 .header-nav a {
   text-decoration: none;
   color: #111;

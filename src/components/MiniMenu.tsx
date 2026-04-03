@@ -1,41 +1,65 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import CartLink from "@/components/cart/CartLink";
+import { useState } from "react";
 
 export default function MiniMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <nav className="mini-menu" aria-label="Mini navigation">
-      {/* Desktop */}
-      <div className="mini-menu-desktop">
-        <Link href="/" className="mini-menu-link">Главная</Link>
-        <Link href="/pages" className="mini-menu-link">Каталог</Link>
-        <CartLink />
-      </div>
-      
-      {/* Mobile hamburger */}
+    <nav className="mini-menu-nav" role="navigation" aria-label="Мини меню навигации">
+      {/* Desktop версия */}
+      <ul className="mini-menu-desktop" role="list">
+        <li>
+          <Link href="/" className="mini-menu-link" onClick={closeMenu}>
+            Главная
+          </Link>
+        </li>
+        <li>
+          <Link href="/pages" className="mini-menu-link" onClick={closeMenu}>
+            Каталог
+          </Link>
+        </li>
+        <li>
+          <CartLink className="mini-menu-link cart-link-mini" />
+        </li>
+      </ul>
+
+      {/* Мобильная кнопка гамбургер */}
       <button 
-        className="mini-menu-toggle"
-        aria-label="Toggle menu"
+        className="mini-menu-hamburger"
+        aria-label="Переключить меню"
         aria-expanded={isOpen}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleMenu}
       >
-        <span />
-        <span />
-        <span />
+        <span className="hamburger-line"></span>
+        <span className="hamburger-line"></span>
+        <span className="hamburger-line"></span>
       </button>
-      
-      {/* Mobile dropdown */}
+
+      {/* Мобильное выпадающее меню */}
       {isOpen && (
-        <div className="mini-menu-mobile">
-          <Link href="/" className="mini-menu-link" onClick={() => setIsOpen(false)}>Главная</Link>
-          <Link href="/pages" className="mini-menu-link" onClick={() => setIsOpen(false)}>Каталог</Link>
-          <Link href="/cart" className="mini-menu-link" onClick={() => setIsOpen(false)}>Корзина</Link>
-        </div>
+        <ul className="mini-menu-mobile" role="list">
+          <li>
+            <Link href="/" className="mini-menu-link" onClick={closeMenu}>
+              Главная
+            </Link>
+          </li>
+          <li>
+            <Link href="/pages" className="mini-menu-link" onClick={closeMenu}>
+              Каталог
+            </Link>
+          </li>
+          <li>
+            <CartLink className="mini-menu-link cart-link-mini" onClick={closeMenu} />
+          </li>
+        </ul>
       )}
     </nav>
   );
 }
+

@@ -6,10 +6,12 @@ import CartLink from "@/components/cart/CartLink";
 import { categories } from "@/data/categories";
 
 // Компонент заголовка сайта с поиском и меню
-export default function Header() {
+export default function Header({ hideHeader }: { hideHeader?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  if (hideHeader) return null;
 
   return (
     <header className="site-header">

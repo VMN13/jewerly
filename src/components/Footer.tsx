@@ -1,4 +1,6 @@
-export default function Footer() {
+export default function Footer({ hideFooter }: { hideFooter?: boolean }) {
+  if (hideFooter) return null;
+
   return (
     <footer className="site-footer">
       <div className="site-shell footer-inner">

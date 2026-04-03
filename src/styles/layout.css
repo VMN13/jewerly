@@ -7,8 +7,21 @@
 .app-main {
   flex: 1;
   overflow-y: auto;
-  padding-top: 0;
-  padding-bottom: calc(var(--footer-height) + var(--logo-height));
+
+  padding-bottom: 20px;
+}
+
+
+.app-main.product-fullscreen {
+  overflow: hidden;
+  height: 100vh;
+  padding-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .app-main.product-fullscreen {
+    height: 100dvh;
+  }
 }
 
 .site-header {
@@ -22,6 +35,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
+  
 }
 
 .site-footer {
@@ -39,14 +53,8 @@
 }
 
 .logo-strip {
-  position: fixed;
-  bottom: var(--footer-height);
-  left: 0;
-  right: 0;
-  height: var(--logo-height);
+  display: flex;
   background: #fafafa;
-  border-top: 1px solid #eee;
-  z-index: 30;
 }
 
 .logo-strip-grid {
