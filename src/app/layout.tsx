@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import LogoStrip from "@/components/LogoStrip";
 import CartProvider from "@/components/cart/CartProvider";
 import SupportChat from "@/components/SupportChat";
-import PreviewTimeout from "@/components/PreviewTimeout";
+
 
 import "@/styles/preview-timeout.css";
 
