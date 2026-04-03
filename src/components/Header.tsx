@@ -25,7 +25,7 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
         >
           
         </button>
-         <CartLink showIcon />
+         <CartLink />
   <nav className="header-nav" aria-label="Main navigation">
      
             <Link href="/" className="brand" onClick={closeMenu}>
