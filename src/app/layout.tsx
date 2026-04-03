@@ -5,8 +5,18 @@ import Footer from "@/components/Footer";
 import LogoStrip from "@/components/LogoStrip";
 import CartProvider from "@/components/cart/CartProvider";
 import SupportChat from "@/components/SupportChat";
-import "./globals.css";
 
+import "./globals.css";
+import "./layout.css";
+import "./header.css";
+import "./mobile-menu.css";
+import "./support-chat.css";
+import "./catalog.css";
+import "./products.css";
+import "./product-page.css";
+import "./cart.css";
+import "./buttons.css";
+import "./responsive.css";
 
 
 const geistSans = Geist({

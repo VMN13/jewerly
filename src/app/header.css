@@ -1,0 +1,73 @@
+.brand {
+  font-size: 7vh;
+  font-weight: 400;
+  color: #111;
+  text-decoration: none;
+  font-style: italic;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.02em;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+.header-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.header-nav-badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  background: #c40000;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-nav-link:has(.header-nav-badge[data-count]:not([data-count="0"])) .header-nav-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mobile-menu-btn {
+  display: none;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 60;
+}
+
+.header-search {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: start;
+  min-width: 0;
+  order: 3;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

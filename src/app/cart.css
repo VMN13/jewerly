@@ -1,0 +1,134 @@
+.cart-page-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: clamp(18px, 3vw, 36px) 0;
+}
+
+.cart-page-container {
+  width: min(80%, 1100px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-page-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #d4d4d4;
+  padding-bottom: 12px;
+}
+
+.cart-page-head h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.cart-empty {
+  border: 1px dashed #ccc;
+  border-radius: 12px;
+  padding: 18px;
+  color: #555;
+  background: #fafafa;
+}
+
+.cart-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.cart-summary-item {
+  border: 1px solid #d4d4d4;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-summary-item span {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.cart-summary-item strong {
+  font-size: 1.1rem;
+}
+
+.cart-list {
+  display: grid;
+  gap: 12px;
+}
+
+.cart-item {
+  border: 1px solid #d4d4d4;
+  border-radius: 20px;
+  background: #fff;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 14px;
+}
+
+.cart-item-image-wrap {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #e5e5e5;
+  background: #f7f7f7;
+  display: grid;
+  place-items: center;
+}
+
+.cart-item-image {
+  width: 72%;
+  height: auto;
+}
+
+.cart-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-item-content h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.cart-item-content p {
+  margin: 0;
+  color: #444;
+  font-size: 0.92rem;
+}
+
+.cart-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-qty-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cart-item-qty {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.cart-footer-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}

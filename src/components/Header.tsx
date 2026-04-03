@@ -25,22 +25,23 @@ export default function Header() {
           <span />
           <span />
         </button>
-
-        <Link href="/" className="brand" onClick={closeMenu}>
-          Gold Jewerly
-        </Link>
-
-        <nav className="header-nav" aria-label="Main navigation">
+  <nav className="header-nav" aria-label="Main navigation">
           <Link href="/">Главная</Link>
           <Link href="/pages">Страницы</Link>
           <CartLink />
         </nav>
+        <Link href="/" className="brand" onClick={closeMenu}>
+          Yours Jewerly
+        </Link>
+
+      
 
         <div
           className={`mobile-sidebar-overlay ${isMenuOpen ? "is-open" : ""}`}
           onClick={closeMenu}
           aria-hidden="true"
         />
+        
         <aside className={`mobile-sidebar ${isMenuOpen ? "is-open" : ""}`} aria-label="Мобильное меню">
           <div className="mobile-sidebar-head">
             <strong>Разделы</strong>

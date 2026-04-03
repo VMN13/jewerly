@@ -50,6 +50,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
           <div className="product-detail-content">
             <p>{product.description}</p>
+            <p className="product-price">Цена: <strong>{product.price} BYN</strong></p>
             <div className="product-actions">
               <AddToCartButton productId={product.id} />
               <Link href="/pages" className="catalog-link product-back-link">

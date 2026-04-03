@@ -44,7 +44,7 @@ export default function CartPage() {
                   <div className="cart-item-content">
                     <h2>{item.name}</h2>
                     <p>{item.description}</p>
-
+                    
                     <div className="cart-item-actions">
                       <div className="cart-qty-row">
                         <button

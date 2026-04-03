@@ -97,12 +97,12 @@ export const earringsPendants: Product[] = [
   },
   {
     id: 10,
-    name: "Золотые клипсы",
+    name: "Серьги из желтого золота с бриллиантами",
     category: "earrings-pendants",
-    description: "Комфортные клипсы без прокола с камнями.",
+    description: "В форме сердца",
     createdAt: "2024-04-25",
-    image: "/images/earrings-pendants/clips.jpg",
-    price: 200
+    image: "/images/ear/love.jpg",
+    price: 1000
   }
 ];
 
@@ -110,20 +110,20 @@ export const earringsPendants: Product[] = [
 export const chainsNecklaces: Product[] = [
   {
     id: 11,
-    name: "Золотое колье",
+    name: "Колье из белого золота с морганитом и бриллиантами",
     category: "chains-necklaces",
     description: "Длинное колье с крупными звеньями в современном дизайне.",
     createdAt: "2024-02-02",
-    image: "/images/chains-necklaces/necklace-gold.jpg",
-    price: 200
+     image: "/images/necklace/necklaceBrilliant.jpg",
+    price: 20000
   },
   {
     id: 12,
-    name: "Золотой чокер",
+    name: "Колье из белого золота с аквамарином и бриллиантами",
     category: "chains-necklaces",
     description: "Трендовый чокер с гравировкой для смелого образа.",
     createdAt: "2024-02-18",
-    image: "/images/chains-necklaces/choker.jpg",
+      image: "/images/necklace/BlueBrilliant.jpg",
     price: 3000
   },
   {
@@ -132,7 +132,7 @@ export const chainsNecklaces: Product[] = [
     category: "chains-necklaces",
     description: "Браслет с бриллиантами в стиле 'теннис'.",
     createdAt: "2024-03-29",
-    image: "/images/chains-necklaces/tennis-bracelet.jpg",
+      image: "/images/necklace/necklaceBrilliant.jpg",
     price: 4000
   },
   {
@@ -141,7 +141,7 @@ export const chainsNecklaces: Product[] = [
     category: "chains-necklaces",
     description: "Классическая цепочка с крупными звеньями.",
     createdAt: "2024-04-05",
-    image: "/images/chains-necklaces/chain-gold.jpg",
+      image: "/images/necklace/necklaceBrilliant.jpg",
     price: 9000
   },
   {
@@ -150,7 +150,7 @@ export const chainsNecklaces: Product[] = [
     category: "chains-necklaces",
     description: "Крест из золота с бриллиантами.",
     createdAt: "2024-05-15",
-    image: "/images/chains-necklaces/cross-pendant.jpg",
+      image: "/images/necklace/necklaceBrilliant.jpg",
     price: 4000
   }
 ];
@@ -163,7 +163,7 @@ export const newArrivals: Product[] = [
     category: "new-arrivals",
     description: "Элегантное колье с натуральным жемчугом.",
     createdAt: "2024-04-12",
-    image: "/images/new-arrivals/pearl-necklace.jpg",
+    image: "/images/necklace/necklaceBrilliant.jpg",
     price: 6000
   },
   {
