@@ -24,8 +24,8 @@ export default function MiniMenu() {
             Каталог
           </Link>
         </li>
-        <li>
-          <CartLink className="mini-menu-link cart-link-mini" />
+        <li className="mini-menu-link cart-link-mini">
+          <CartLink />
         </li>
       </ul>
 
@@ -39,6 +39,7 @@ export default function MiniMenu() {
         <span className="hamburger-line"></span>
         <span className="hamburger-line"></span>
         <span className="hamburger-line"></span>
+
       </button>
 
       {/* Мобильное выпадающее меню */}
@@ -54,8 +55,8 @@ export default function MiniMenu() {
               Каталог
             </Link>
           </li>
-          <li>
-            <CartLink className="mini-menu-link cart-link-mini" onClick={closeMenu} />
+          <li className="mini-menu-link cart-link-mini" onClick={closeMenu}>
+            <CartLink />
           </li>
         </ul>
       )}
