@@ -24,12 +24,14 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
           >
             ☰
           </button>
+          <Link href="/" className="rs-logo-link">
             <Image 
-            src="/images/logo/RS.jpg" 
-            alt="RS Logo" 
-            width={80} 
-            height={30}
-          />
+              src="/images/logo/RS.jpg" 
+              alt="RS Logo" 
+              width={80} 
+              height={30}
+            />
+          </Link>
           <BurgerMenu isOpen={isMenuOpen} onClose={closeMenu} />
           <CartLink />
         </div>

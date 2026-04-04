@@ -1,3 +1,1 @@
-# Mobile Sidebar Products List
-
-- [ ] 1. Update src/components
+# Task Complete: Logo Navigation & Hover Removal&#10;&#10;- [x] Hover effect removed from main page category cards (src/data/catalog.css)&#10;- [x] RS Logo wrapped in Link href="/" (src/components/Header.tsx)&#10;&#10;## Test:&#10;npm run dev&#10;- Main page: No lift/shadow hover on rings/earrings photos&#10;- Subpages (/search etc.): Click RS logo → returns to home (/)

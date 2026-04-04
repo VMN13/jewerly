@@ -7,13 +7,21 @@
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   letter-spacing: -0.02em;
   margin-top: -39px;
-  
+  position: absolute;
+  top: 98px;
 }
 
 .brand::first-letter {
   color: rgb(170, 9, 9);
   font-weight: 900;
   
+}
+
+
+.rs-logo-link {
+  position: absolute;
+  top: 0px;
+  right: 40%;
 }
 
 .header-nav a {
