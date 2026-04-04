@@ -10,7 +10,7 @@ interface ImagePreviewProps {
   className?: string;
 }
 
-export default function ImagePreview({ src, alt, width, height }: ImagePreviewProps) {
+export default function ImagePreview({ src, alt, width, height, className }: ImagePreviewProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentSrc, setCurrentSrc] = useState("");
 
@@ -37,7 +37,7 @@ export default function ImagePreview({ src, alt, width, height }: ImagePreviewPr
         tabIndex={0}
         onKeyDown={(e) => e.key === "Enter" && openPreview(src)}
       >
-        <Image src={src} alt={alt || ''} width={width || 300} height={height || 300} className={className || "w-full h-full object-cover"} />
+        <Image src={src} alt={alt || ''} width={width || 300} height={height || 300} className={className ? `${className} w-full h-full object-cover` : "w-full h-full object-cover"} />
       </div>
 
       
