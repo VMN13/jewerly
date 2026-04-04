@@ -90,6 +90,8 @@ a.cart {
   .catalog-sort-select-compact {
     text-align: center;
     text-align-last: center;
+    background-color:  var(--bg-primary);
+    color: var(--text-primary);
   }
 
   .mobile-menu-btn {
@@ -136,10 +138,10 @@ a.cart {
     width: 150px;
   }
 
-  .catalog-link {
-  color: #111;
+.catalog-link {
+  color: var(--text-primary);
   text-decoration: none;
-  border: 1px solid #d4d4d4;
+  border: 1px solid var(--border);
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   border-radius: 20px;
   margin-top: 20px;
@@ -212,6 +214,7 @@ a.cart {
   .category-card-content h2 {
     font-size: 40px;
     line-height: 1.15;
+    --text-primary: #ffffff;
   }
 
   .category-card-content p {
@@ -227,16 +230,21 @@ a.cart {
   .product-card {
     padding: 8px;
     gap: 6px;
+  background-color: (var(--bg-secondary));
+  color:(var(--text-primary));
+  
   }
 
   .product-card h2 {
     font-size: 0.78rem;
     line-height: 1.2;
+     color:(var(--text-primary));
   }
 
   .product-card p {
     font-size: 0.68rem;
     line-height: 1.25;
+     color:(var(--text-primary));
   }
 
   .product-detail-card {
@@ -276,6 +284,7 @@ a.cart {
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
+    border-radius: 20px;
   }
 
 
@@ -284,8 +293,8 @@ a.cart {
   top: 390px;
   left: 0;
   right: 0;
-  background: white;
-  border: 1px solid #063ba5;
+   background-color:var(--bg-primary);
+  border: 1px solid #000000;
   border-radius: 8px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -293,6 +302,7 @@ a.cart {
   overflow-y: auto;
   margin-top: 4px;
   width: 100%;
+  color: var(--text-primary);
   box-sizing: border-box;
 }
 
@@ -328,6 +338,7 @@ a.cart {
 .search-result-item div {
   flex: 1;
   min-width: 0;
+  color: var(--text-primary);
 }
 
 .search-result-item h4 {
@@ -338,6 +349,7 @@ a.cart {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--text-primary);
 }
 
 .search-result-item p {
@@ -359,7 +371,15 @@ a.cart {
   flex-shrink: 0;
 }
 
+.search-result-footer {
+  font-size: 20px;
+  text-align: center;
+}
 
+.header-search-overlay {
+  position: absolute;
+  top: 20px;
+}
 
 }
 

@@ -44,12 +44,12 @@ html.has-no-scroll {
 }
 
 .product-page-head p {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
 .product-detail-card {
-  background: white;
+  background: var(--bg-primary);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -83,7 +83,7 @@ html.has-no-scroll {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .product-price {
@@ -102,21 +102,25 @@ html.has-no-scroll {
   gap: 12px;
 }
 
-.product-back-link {
+.product-back-link.cart-add-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
-  background: #f8f8f8;
-  color: #333;
+  padding: 10px 14px;
+  border: 1px solid var(--text-primary);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.2s;
-  border: 2px solid transparent;
+  width: 100%;
+  min-height: 42px;
+  font-size: 20px;
 }
 
-.product-back-link:hover {
-  background: #e8e8e8;
-  border-color: #ddd;
+.product-back-link.cart-add-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
 }

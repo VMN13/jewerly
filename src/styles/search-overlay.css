@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--overlay-bg);
 }
 
 .search-active .catalog-search {
@@ -27,7 +27,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10001;
-  background: white;
+  background: var(--bg-primary);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);

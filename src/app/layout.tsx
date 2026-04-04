@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LogoStrip from "@/components/LogoStrip";
 import CartProvider from "@/components/cart/CartProvider";
+import { Providers } from "@/components/providers";
 // SearchProvider import commented due to build error
 // Removed useSearch - layout is server component
 
@@ -60,11 +61,13 @@ export default function RootLayout({
     >
       <body suppressHydrationWarning className="app-body">
         <CartProvider>
-          <Header />
-          <main className="app-main">{children}</main>
-          <LogoStrip />
-          <Footer />
-          <SupportChat />
+          <Providers>
+            <Header />
+            <main className="app-main">{children}</main>
+            <LogoStrip />
+            <Footer />
+            <SupportChat />
+          </Providers>
         </CartProvider>
 
 

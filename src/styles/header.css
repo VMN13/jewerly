@@ -9,6 +9,8 @@
   margin-top: -39px;
   position: absolute;
   top: 98px;
+  
+  color: (var(--text-primary));
 }
 
 .brand::first-letter {
