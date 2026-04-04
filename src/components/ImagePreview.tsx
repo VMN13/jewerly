@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 
 interface ImagePreviewProps {
   src: string;
-  alt: string;
-  width: number;
-  height: number;
+  alt?: string;
+  width?: number;
+  height?: number;
+  className?: string;
 }
 
 export default function ImagePreview({ src, alt, width, height }: ImagePreviewProps) {
@@ -36,7 +37,7 @@ export default function ImagePreview({ src, alt, width, height }: ImagePreviewPr
         tabIndex={0}
         onKeyDown={(e) => e.key === "Enter" && openPreview(src)}
       >
-        <Image src={src} alt={alt} width={width} height={height} className="w-full h-full object-cover" />
+        <Image src={src} alt={alt || ''} width={width || 300} height={height || 300} className={className || "w-full h-full object-cover"} />
       </div>
 
       
