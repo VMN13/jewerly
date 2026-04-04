@@ -1,16 +1,12 @@
 .brand {
-  font-size: 7vh;
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 400;
-  color: #111;
+  color: var(--text-primary);
   text-decoration: none;
   font-style: italic;
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   letter-spacing: -0.02em;
-  margin-top: -39px;
-  position: absolute;
-  top: 98px;
-
-  color: (var(--text-primary));
+  margin: 0;
 }
 
 .brand::first-letter {

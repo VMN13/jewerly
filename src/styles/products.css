@@ -49,8 +49,7 @@
 .product-image-wrap {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border: 1px solid #e5e5e5;
-  background: #f7f7f7;
+  background: transparent;
   display: grid;
   border-radius: 20px;
   place-items: center;

@@ -11,7 +11,7 @@ export const categories: CategoryCard[] = [
     id: 1,
     title: "Кольца",
     subtitle: "Минималистичные формы и строгая геометрия",
-    image: "/ringsandbracelets.jpg",
+    image: "/rings.jpg",
     href: "/pages/rings-bracelets", // ✅ Отдельная страница
   },
   {
@@ -25,7 +25,7 @@ export const categories: CategoryCard[] = [
     id: 3,
     title: "Колье",
     subtitle: "Сдержанный дизайн для повседневного образа",
-    image: "/bracelets.jpg",
+    image: "/necklace.png",
     href: "/pages/chains-necklaces", // ✅ Отдельная страница
   },
   {

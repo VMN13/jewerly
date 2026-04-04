@@ -36,12 +36,7 @@ export default function CartPage() {
   return (
     <section className="cart-page-section">
       <div className="cart-page-container">
-        <div className="cart-page-head">
-          <h1>Корзина</h1>
-          <Link href="/pages" className="catalog-link">
-            Вернуться в каталог
-          </Link>
-        </div>
+        {/* Cart head removed */}
 
         {cartProducts.length === 0 ? (
           <div className="cart-empty">Корзина пуста</div>

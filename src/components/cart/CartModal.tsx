@@ -24,9 +24,7 @@ export default function CartModal({
   return (
     <div className="cart-modal-overlay" onClick={onClose}>
       <div className="cart-modal" onClick={(e) => e.stopPropagation()}>
-        <div className="cart-modal-head">
-          <h3>Товар добавлен в корзину!</h3>
-        </div>
+        {/* Head removed */}
         <div className="cart-modal-body">
           <button className="cart-modal-btn" onClick={goToCart}>
             Перейти в корзину
