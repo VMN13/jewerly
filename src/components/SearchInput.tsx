@@ -35,14 +35,14 @@ export default function SearchInput() {
           product.name.toLowerCase().includes(normalizedQuery) || 
           product.description.toLowerCase().includes(normalizedQuery)
         ).slice(0, 5);
-        setSearchResults(results);
+        setSearchResults(results as any);
         setShowDropdown(results.length > 0);
-        setIsSearchActive(results.length > 0);
+
 
       } else {
-      setSearchResults([]);
+        setSearchResults([] as any);
         setShowDropdown(false);
-        setIsSearchActive(false);
+
 
       }
     }, 300);
