@@ -9,15 +9,18 @@ import { newArrivals } from "@/data/products";
 type SortMode = "price_desc" | "price_asc" | "name_asc" | "name_desc";
 
 export default function NewArrivalsPage() {
-  const [sortMode, setSortMode] = useState<SortMode>("date_desc");
+  const [sortMode, setSortMode] = useState<SortMode>("price_desc");
 
   const sortedProducts = useMemo(() => {
     const list = [...newArrivals];
 
     switch (sortMode) {
-      case "date_asc":
-        return list.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
+
+
+      case "price_asc":
+        return list.sort((a, b) => a.price - b.price);
       case "name_asc":
+
         return list.sort((a, b) => a.name.localeCompare(b.name, "ru"));
       case "name_desc":
         return list.sort((a, b) => b.name.localeCompare(a.name, "ru"));
