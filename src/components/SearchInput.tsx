@@ -8,7 +8,8 @@ import { products } from '@/data/products';
 
 export default function SearchInput() {
   const [query, setQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState([] as any[]);
+
   const [showDropdown, setShowDropdown] = useState(false);
 
 
@@ -50,7 +51,8 @@ export default function SearchInput() {
     return () => clearTimeout(timer);
   }, [query]);
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+
     if (event.key === 'Tab' && suggestion) {
       event.preventDefault();
       setQuery(suggestion);
@@ -64,7 +66,8 @@ export default function SearchInput() {
     }
   };
 
-  const handleResultClick = (product) => {
+  const handleResultClick = (product: any) => {
+
     router.push(`/product/${product.id}`);
     setQuery('');
     setShowDropdown(false);
