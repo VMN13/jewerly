@@ -25,11 +25,11 @@ export default function CartPage() {
 
     const itemsList = cartProducts
       .map((item) => 
-        `${item.name} (${item.quantity} шт.) - ${item.price.toLocaleString('ru-RU')} BY`
+        `${item.name} (${item.quantity} шт.) - ${item.price.toLocaleString('ru-RU')} BYN`
       )
       .join('\n');
 
-    return `🛒 Заказ из корзины:\n\n${itemsList}\n\n💰 Итого: ${totalPrice.toLocaleString('ru-RU')} BY\n\n📞 Укажите способ доставки и оплаты`;
+    return `🛒 Заказ из корзины:\n\n${itemsList}\n\n💰 Итого: ${totalPrice.toLocaleString('ru-RU')} BYN\n\n📞 Укажите способ доставки и оплаты`;
   };
 
   return (
@@ -45,14 +45,6 @@ export default function CartPage() {
         {cartProducts.length === 0 ? (
           <div className="cart-empty">
             Корзина пуста
-            <br />
-            <button 
-              onClick={handleTelegramOrder}
-              className="cart-buy-btn mt-4"
-              style={{ display: 'block', margin: '1rem auto 0' }}
-            >
-              Написать в Telegram
-            </button>
           </div>
         ) : (
           <>
@@ -122,7 +114,7 @@ export default function CartPage() {
             <div className="cart-summary">
               <div className="cart-summary-item">
                 <span>Итого:</span>
-                <strong>{totalPrice.toLocaleString('ru-RU')} BY</strong>
+                <strong>{totalPrice.toLocaleString('ru-RU')} BYN</strong>
               </div>
             </div>
             
@@ -132,7 +124,7 @@ export default function CartPage() {
                 className="cart-buy-btn"
                 onClick={handleTelegramOrder}
               >
-                💬 Заказать в Telegram ({totalPrice.toLocaleString('ru-RU')} BY)
+                💬 Заказать в Telegram ({totalPrice.toLocaleString('ru-RU')} BYN)
               </button>
               <button 
                 type="button" 

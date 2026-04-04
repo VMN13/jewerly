@@ -8,16 +8,7 @@ export default function CartModal({ isOpen, onClose }: { isOpen: boolean; onClos
   const { totalItems } = useCart();
   const router = useRouter();
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
+
 
   const goToCart = () => {
     onClose();

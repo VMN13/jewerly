@@ -71,6 +71,7 @@ export default function ChainsNecklacesPage() {
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
 
+
             </select>
           </div>
         </div>

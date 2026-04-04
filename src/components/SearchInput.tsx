@@ -1,17 +1,24 @@
- "use client";
+"use client";
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { products } from '@/data/products';
 
 export default function SearchInput() {
   const [query, setQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+
+
   const router = useRouter();
 
   const suggestion = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     if (normalized.length < 2) return '';
-    const match = products.find((product: any) => product.name.toLowerCase().startsWith(normalized));
+    const match = products.find((product) => product.name.toLowerCase().startsWith(normalized));
     return match?.name ?? '';
   }, [query]);
 
@@ -19,14 +26,48 @@ export default function SearchInput() {
     ? suggestion.slice(query.trim().length)
     : '';
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  // Debounced search
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (query.trim().length > 0) {
+        const normalizedQuery = query.trim().toLowerCase();
+        const results = products.filter((product) => 
+          product.name.toLowerCase().includes(normalizedQuery) || 
+          product.description.toLowerCase().includes(normalizedQuery)
+        ).slice(0, 5);
+        setSearchResults(results);
+        setShowDropdown(results.length > 0);
+        setIsSearchActive(results.length > 0);
+
+      } else {
+      setSearchResults([]);
+        setShowDropdown(false);
+        setIsSearchActive(false);
+
+      }
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [query]);
+
+  const handleKeyDown = (event) => {
     if (event.key === 'Tab' && suggestion) {
       event.preventDefault();
       setQuery(suggestion);
     }
     if (event.key === 'Enter' && query.trim()) {
       router.push(`/search?q=${encodeURIComponent(query)}`);
+      setShowDropdown(false);
     }
+    if (event.key === 'Escape') {
+      setShowDropdown(false);
+    }
+  };
+
+  const handleResultClick = (product) => {
+    router.push(`/product/${product.id}`);
+    setQuery('');
+    setShowDropdown(false);
   };
 
   return (
@@ -44,8 +85,34 @@ export default function SearchInput() {
         onKeyDown={handleKeyDown}
         autoComplete="off"
       />
+      {showDropdown && searchResults.length > 0 && (
+        <div className="search-dropdown">
+          {searchResults.map((product) => (
+            <div 
+              key={product.id} 
+              className="search-result-item"
+              onMouseDown={() => handleResultClick(product)}
+            >
+              <Image 
+                src={product.image} 
+                alt={product.name} 
+                width={60} 
+                height={60} 
+                className="search-result-image"
+              />
+              <div>
+                <h4>{product.name}</h4>
+                <p>{product.price} BYN</p>
+              </div>
+            </div>
+          ))}
+          <div className="search-result-footer">
+            <Link href={`/search?q=${encodeURIComponent(query)}`}>
+              Показать все результаты
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
-} 
-
-
+}

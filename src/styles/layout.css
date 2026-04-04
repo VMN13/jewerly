@@ -13,7 +13,7 @@
 
 
 .app-main.product-fullscreen {
-  overflow: hidden;
+  
   height: 100vh;
   padding-bottom: 0;
 }

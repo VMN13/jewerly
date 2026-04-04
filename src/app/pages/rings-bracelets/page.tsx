@@ -71,10 +71,9 @@ export default function RingsBraceletsPage() {
             >
               <option value="price_desc">Цена: ↓</option>
               <option value="price_asc">Цена: ↑</option>
-              <option value="date_desc">Дата: новые</option>
-              <option value="date_asc">Дата: старые</option>
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
+
             </select>
           </div>
         </div>

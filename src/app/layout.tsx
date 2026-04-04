@@ -4,6 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LogoStrip from "@/components/LogoStrip";
 import CartProvider from "@/components/cart/CartProvider";
+// SearchProvider import commented due to build error
+// Removed useSearch - layout is server component
+
+
+
+
 import SupportChat from "@/components/SupportChat";
 
 import "@/styles/preview-timeout.css";
@@ -21,6 +27,8 @@ import "@/styles/product-page.css";
 import "@/styles/cart.css";
 import "@/styles/buttons.css";
 import "@/styles/responsive.css";
+import "@/styles/search-overlay.css";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +36,8 @@ const geistSans = Geist({
 });
 
 const geistMono = Geist_Mono({
+
+
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -53,9 +63,12 @@ export default function RootLayout({
           <Header />
           <main className="app-main">{children}</main>
           <LogoStrip />
-<Footer />
-<SupportChat />
+          <Footer />
+          <SupportChat />
         </CartProvider>
+
+
+
       </body>
     </html>
   );

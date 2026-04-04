@@ -68,8 +68,8 @@ export default function NewArrivalsPage() {
               onChange={(e) => setSortMode(e.target.value as SortMode)}
               className="catalog-sort-select catalog-sort-select-compact"
             >
-              <option value="price_desc">Цена: ↓ (дорогие сначала)</option>
-              <option value="price_asc">Цена: ↑ (дешёвые сначала)</option>
+<option value="price_desc">Цена: ↓</option>
+              <option value="price_asc">Цена: ↑</option>
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
             </select>

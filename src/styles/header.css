@@ -6,7 +6,8 @@
   font-style: italic;
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   letter-spacing: -0.02em;
-  margin-top: 30px;
+  margin-top: -39px;
+  
 }
 
 .brand::first-letter {
