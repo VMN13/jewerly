@@ -1,4 +1,4 @@
- "use client";
+"use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -29,7 +29,6 @@ export default function ImagePreview({ src, alt, width, height, className }: Ima
 
   return (
     <>
-
       <div 
         className="image-preview-wrapper cursor-pointer w-full h-full"
         onClick={() => openPreview(src)}
@@ -37,10 +36,9 @@ export default function ImagePreview({ src, alt, width, height, className }: Ima
         tabIndex={0}
         onKeyDown={(e) => e.key === "Enter" && openPreview(src)}
       >
-        <Image src={src} alt={alt || ''} width={width || 300} height={height || 300} className={className ? `${className} w-full h-full object-cover` : "w-full h-full object-cover"} />
+        <Image src={src} alt={alt || ''} width={width || 300} height={height || 300} className={"w-full h-full object-cover " + (className || "")} />
       </div>
 
-      
       {isOpen && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-90 z-[9999] flex items-center justify-center p-4"
@@ -65,4 +63,3 @@ export default function ImagePreview({ src, alt, width, height, className }: Ima
     </>
   );
 }
-
