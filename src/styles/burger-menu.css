@@ -62,10 +62,15 @@
   color: #000;
 }
 
-.burger-products-list {
-  max-height: 300px;
+.burger-menu {
+  height: 100vh;
   overflow-y: auto;
 }
+
+.burger-products-list {
+  height: 100%;
+}
+
 
 @media (min-width: 768px) {
   .burger-menu {

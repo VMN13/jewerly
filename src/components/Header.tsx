@@ -19,7 +19,10 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
 
   return (
     <header className="site-header">
+      
       <div className="site-shell header-inner">
+ 
+            <div className="first-menu">
 <button
   type="button"
   className="burger-toggle"
@@ -30,15 +33,10 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
 <BurgerMenu isOpen={isMenuOpen} onClose={closeMenu} />
 
          <CartLink />
-
-     
+</div>
             <Link href="/" className="brand" onClick={closeMenu}>
           Yours Jewerly
         </Link>
-      
-      
-      
-      
       </div>
     </header>
   );

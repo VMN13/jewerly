@@ -4,6 +4,8 @@
   }
 }
 
+
+
 @media (max-width: 640px) {
  
 
@@ -124,6 +126,11 @@ a.cart {
     font-weight: 400;
   }
 
+
+  .catalog-first {
+    width: 50%;
+  }
+
   .catalog-head h1 {
     font-size: 30px;
     width: 150px;
@@ -139,7 +146,7 @@ a.cart {
   margin-bottom: 20px;
   font-size: 30px;
   text-align: center;
-  width: 300px;
+  width: 50%;
   
 }
 
@@ -171,6 +178,8 @@ a.cart {
 }
 
 
+
+
 .cart-modal-btn {
   width: 180px;
   border: solid 1px;
@@ -198,7 +207,7 @@ a.cart {
   }
 
   .category-card-content h2 {
-    font-size: clamp(1.35rem, 7vw, 2rem);
+    font-size: 40px;
     line-height: 1.15;
   }
 

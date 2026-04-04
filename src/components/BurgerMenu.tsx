@@ -32,7 +32,8 @@ export default function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
       <nav className="burger-products">
         <strong>Товары ({allProducts.length})</strong>
         <div className="burger-products-list">
-          {allProducts.slice(0, 20).map((product) => (
+{allProducts.map((product) => (
+
             <Link 
               key={product.id} 
               href={`/product/${product.id}`} 

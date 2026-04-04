@@ -7,10 +7,14 @@ export default function Home() {
     <section className="home-categories-section">
       <div className="home-categories-container">
         <div className="catalog-head">
+          <div color="catalog-first">
           <h1>Разделы каталога</h1>
+          </div>
+         
           <Link href="/pages" className="catalog-link">
             Открыть каталог
           </Link>
+         
         </div>
 
         <div className="category-list">

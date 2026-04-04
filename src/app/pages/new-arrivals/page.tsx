@@ -51,7 +51,7 @@ export default function NewArrivalsPage() {
     <section className="catalog-section">
       <div className="catalog-container">
         <div className="catalog-head">
-          <h1>Новые поступления</h1>
+          <h1>Аксессуары</h1>
   <Link href="/pages" className="catalog-link">Назад к разделам</Link>
         </div>
 
