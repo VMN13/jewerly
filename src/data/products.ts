@@ -14,10 +14,11 @@ export const ringsBracelets: Product[] = [
     id: 1,
     name: "Золотое кольцо с бриллиантом",
     category: "rings-bracelets",
-    description: "Элегантное кольцо с центральным бриллиантом в классическом стиле.",
+    description:
+      "Элегантное кольцо с центральным бриллиантом в классическом стиле.",
     createdAt: "2024-01-03",
     image: "/images/rings/Brilliant.jpg",
-    price: 400
+    price: 400,
   },
   {
     id: 2,
@@ -26,7 +27,7 @@ export const ringsBracelets: Product[] = [
     description: "Сапфир от RS",
     createdAt: "2024-01-08",
     image: "/images/rings/Sapfir.jpg",
-    price: 2000
+    price: 2000,
   },
   {
     id: 3,
@@ -35,7 +36,7 @@ export const ringsBracelets: Product[] = [
     description: "Изумруд от CHAMOVSKIKH.",
     createdAt: "2024-02-10",
     image: "/images/rings/Izumrud.png",
-    price: 600
+    price: 600,
   },
   {
     id: 4,
@@ -44,7 +45,7 @@ export const ringsBracelets: Product[] = [
     description: "Красный рубин в золотой оправе с боковыми камнями.",
     createdAt: "2024-03-06",
     image: "/images/rings/Rubin.jpg",
-    price: 900
+    price: 900,
   },
   {
     id: 5,
@@ -53,8 +54,8 @@ export const ringsBracelets: Product[] = [
     description: "Синий топаз в золотой оправе с боковыми камнями.",
     createdAt: "2024-03-22",
     image: "/images/rings/Topaz.jpg",
-    price: 700
-  }
+    price: 700,
+  },
 ];
 
 // 2️⃣ СЕРЬГИ И ПОДВЕСКИ (ТОЛЬКО ID 6-10)
@@ -66,7 +67,7 @@ export const earringsPendants: Product[] = [
     description: "Минималистичные серьги с бриллиантами для любого образа.",
     createdAt: "2024-01-15",
     image: "/images/ear/goldSerg.jpg",
-    price: 100
+    price: 100,
   },
   {
     id: 7,
@@ -75,7 +76,7 @@ export const earringsPendants: Product[] = [
     description: "Изысканная подвеска с синим сапфиром на золотой цепочке.",
     createdAt: "2024-01-20",
     image: "/images/ear/WhiteGold.jpg",
-    price: 700
+    price: 700,
   },
   {
     id: 8,
@@ -84,7 +85,7 @@ export const earringsPendants: Product[] = [
     description: "Потрясающие длинные серьги с каплей для вечернего выхода.",
     createdAt: "2024-02-27",
     image: "/images/ear/Turmalin.jpg",
-    price: 1000
+    price: 1000,
   },
   {
     id: 9,
@@ -102,8 +103,8 @@ export const earringsPendants: Product[] = [
     description: "В форме сердца",
     createdAt: "2024-04-25",
     image: "/images/ear/love.jpg",
-    price: 1000
-  }
+    price: 1000,
+  },
 ];
 
 // 3️⃣ ЦЕПИ И КОЛЬЕ (ТОЛЬКО ID 11-15)
@@ -114,8 +115,8 @@ export const chainsNecklaces: Product[] = [
     category: "chains-necklaces",
     description: "Длинное колье с крупными звеньями в современном дизайне.",
     createdAt: "2024-02-02",
-     image: "/images/necklace/necklaceBrilliant.jpg",
-    price: 20000
+    image: "/images/necklace/necklaceBrilliant.jpg",
+    price: 20000,
   },
   {
     id: 12,
@@ -123,8 +124,8 @@ export const chainsNecklaces: Product[] = [
     category: "chains-necklaces",
     description: "Трендовый чокер с гравировкой для смелого образа.",
     createdAt: "2024-02-18",
-      image: "/images/necklace/BlueBrilliant.jpg",
-    price: 3000
+    image: "/images/necklace/BlueBrilliant.jpg",
+    price: 3000,
   },
   {
     id: 13,
@@ -132,8 +133,8 @@ export const chainsNecklaces: Product[] = [
     category: "chains-necklaces",
     description: "Браслет с бриллиантами в стиле 'теннис'.",
     createdAt: "2024-03-29",
-      image: "/images/necklace/Ametist.jpg",
-    price: 4000
+    image: "/images/necklace/Ametist.jpg",
+    price: 4000,
   },
   {
     id: 14,
@@ -141,8 +142,8 @@ export const chainsNecklaces: Product[] = [
     category: "chains-necklaces",
     description: "Классическая цепочка с крупными звеньями.",
     createdAt: "2024-04-05",
-      image: "/images/necklace/RedGold.jpg",
-    price: 9000
+    image: "/images/necklace/RedGold.jpg",
+    price: 9000,
   },
   {
     id: 15,
@@ -150,9 +151,9 @@ export const chainsNecklaces: Product[] = [
     category: "chains-necklaces",
     description: "Крест из золота с бриллиантами.",
     createdAt: "2024-05-15",
-      image: "/images/necklace/Izumrud.jpg",
-    price: 40000  
-  }
+    image: "/images/necklace/Izumrud.jpg",
+    price: 40000,
+  },
 ];
 
 // 4️⃣ НОВЫЕ ПОСТУПЛЕНИЯ (ТОЛЬКО ID 16-20)
@@ -164,7 +165,7 @@ export const newArrivals: Product[] = [
     description: "Золочение Гильошированная эмаль",
     createdAt: "2024-04-12",
     image: "/images/Accessories/Eggs.jpg",
-    price: 6000
+    price: 6000,
   },
   {
     id: 17,
@@ -173,7 +174,7 @@ export const newArrivals: Product[] = [
     description: "Серебро 925 пробы",
     createdAt: "2024-04-20",
     image: "/images/Accessories/Sitechko.jpg",
-    price: 1000
+    price: 1000,
   },
   {
     id: 18,
@@ -182,7 +183,7 @@ export const newArrivals: Product[] = [
     description: "Серебро без золочения",
     createdAt: "2024-05-01",
     image: "/images/Accessories/Spoons.jpeg",
-    price: 1000
+    price: 1000,
   },
   {
     id: 19,
@@ -191,7 +192,7 @@ export const newArrivals: Product[] = [
     description: "Гильошированная эмаль Золочение (позолота)",
     createdAt: "2024-05-10",
     image: "/images/Accessories/Medal.jpg",
-    price: 400
+    price: 400,
   },
   {
     id: 20,
@@ -200,8 +201,8 @@ export const newArrivals: Product[] = [
     description: "Золочение (позолота) Эмалево-филигранная техника",
     createdAt: "2024-05-20",
     image: "/images/Accessories/Molochnick.jpg",
-    price: 900
-  }
+    price: 900,
+  },
 ];
 
 // ✅ Функция для получения товаров по категории
@@ -225,8 +226,7 @@ export const allProducts: Product[] = [
   ...ringsBracelets,
   ...earringsPendants,
   ...chainsNecklaces,
-  ...newArrivals
+  ...newArrivals,
 ];
-
 
 export { allProducts as products };

@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import SearchInput from '@/components/SearchInput';
+import SearchInput from "@/components/SearchInput";
 import Image from "next/image";
 import Link from "next/link";
 import { allProducts } from "@/data/products"; // ✅ Используем allProducts
 
-type SortMode = "price_desc" | "price_asc" | "date_desc" | "date_asc" | "name_asc" | "name_desc";
+type SortMode =
+  | "price_desc"
+  | "price_asc"
+  | "date_desc"
+  | "date_asc"
+  | "name_asc"
+  | "name_desc";
 
 export default function PagesIndex() {
   const [sortMode, setSortMode] = useState<SortMode>("price_desc");
@@ -20,9 +26,15 @@ export default function PagesIndex() {
       case "price_desc":
         return list.sort((a, b) => b.price - a.price);
       case "date_asc":
-        return list.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
+        return list.sort(
+          (a, b) =>
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime(),
+        );
       case "date_desc":
-        return list.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        return list.sort(
+          (a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+        );
       case "name_asc":
         return list.sort((a, b) => a.name.localeCompare(b.name, "ru"));
       case "name_desc":
@@ -41,7 +53,7 @@ export default function PagesIndex() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
     );
     cards.forEach((card) => observer.observe(card));
     return () => observer.disconnect();
@@ -52,7 +64,9 @@ export default function PagesIndex() {
       <div className="catalog-container">
         <div className="catalog-head">
           <h1>Каталог товаров</h1>
-          <Link href="/" className="catalog-link">Назад к разделам</Link>
+          <Link href="/" className="catalog-link">
+            Назад к разделам
+          </Link>
         </div>
 
         <div className="catalog-controls">
@@ -60,7 +74,12 @@ export default function PagesIndex() {
           <div className="catalog-sort-wrap">
             <span className="catalog-sort-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 6h10M9 12h8M11 18h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                <path
+                  d="M7 6h10M9 12h8M11 18h6"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
               </svg>
             </span>
             <select
@@ -68,7 +87,7 @@ export default function PagesIndex() {
               onChange={(e) => setSortMode(e.target.value as SortMode)}
               className="catalog-sort-select catalog-sort-select-compact"
             >
-<option value="price_desc">Цена: ↑</option>
+              <option value="price_desc">Цена: ↑</option>
               <option value="price_asc">Цена: ↓</option>
               <option value="date_desc">Дата: новые</option>
               <option value="date_asc">Дата: старые</option>
@@ -88,7 +107,13 @@ export default function PagesIndex() {
             >
               <article className="product-card">
                 <div className="product-image-wrap">
-                  <Image src={product.image} alt={product.name} width={220} height={220} className="product-image"/>
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={220}
+                    height={220}
+                    className="product-image"
+                  />
                 </div>
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import SearchInput from '@/components/SearchInput';
+import SearchInput from "@/components/SearchInput";
 import Image from "next/image";
 import Link from "next/link";
 import { newArrivals } from "@/data/products";
@@ -15,12 +15,9 @@ export default function NewArrivalsPage() {
     const list = [...newArrivals];
 
     switch (sortMode) {
-
-
       case "price_asc":
         return list.sort((a, b) => a.price - b.price);
       case "name_asc":
-
         return list.sort((a, b) => a.name.localeCompare(b.name, "ru"));
       case "name_desc":
         return list.sort((a, b) => b.name.localeCompare(a.name, "ru"));
@@ -41,7 +38,7 @@ export default function NewArrivalsPage() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
     );
     cards.forEach((card) => observer.observe(card));
     return () => observer.disconnect();
@@ -52,7 +49,9 @@ export default function NewArrivalsPage() {
       <div className="catalog-container">
         <div className="catalog-head">
           <h1>Аксессуары</h1>
-  <Link href="/pages" className="catalog-link">Назад к разделам</Link>
+          <Link href="/pages" className="catalog-link">
+            Назад к разделам
+          </Link>
         </div>
 
         <div className="catalog-controls">
@@ -60,7 +59,12 @@ export default function NewArrivalsPage() {
           <div className="catalog-sort-wrap">
             <span className="catalog-sort-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 6h10M9 12h8M11 18h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                <path
+                  d="M7 6h10M9 12h8M11 18h6"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
               </svg>
             </span>
             <select
@@ -68,7 +72,7 @@ export default function NewArrivalsPage() {
               onChange={(e) => setSortMode(e.target.value as SortMode)}
               className="catalog-sort-select catalog-sort-select-compact"
             >
-<option value="price_desc">Цена: ↓</option>
+              <option value="price_desc">Цена: ↓</option>
               <option value="price_asc">Цена: ↑</option>
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
@@ -86,11 +90,17 @@ export default function NewArrivalsPage() {
             >
               <article className="product-card">
                 <div className="product-image-wrap">
-                  <Image src={product.image} alt={product.name} width={220} height={220} className="product-image"/>
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={220}
+                    height={220}
+                    className="product-image"
+                  />
                 </div>
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                 <p>{product.price} BYN</p>
+                <p>{product.price} BYN</p>
               </article>
             </Link>
           ))}

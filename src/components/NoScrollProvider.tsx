@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useEffect, ReactNode } from "react";
 
 type NoScrollContextType = {
   disableScroll: () => void;
@@ -11,13 +11,13 @@ const NoScrollContext = createContext<NoScrollContextType | null>(null);
 
 export function NoScrollProvider({ children }: { children: ReactNode }) {
   const disableScroll = () => {
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   };
 
   const enableScroll = () => {
-    document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
   };
 
   return (
@@ -30,8 +30,7 @@ export function NoScrollProvider({ children }: { children: ReactNode }) {
 export function useNoScroll() {
   const context = useContext(NoScrollContext);
   if (!context) {
-    throw new Error('useNoScroll must be used within NoScrollProvider');
+    throw new Error("useNoScroll must be used within NoScrollProvider");
   }
   return context;
 }
-

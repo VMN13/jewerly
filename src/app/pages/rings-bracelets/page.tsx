@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import SearchInput from '@/components/SearchInput';
+import SearchInput from "@/components/SearchInput";
 import Image from "next/image";
 import Link from "next/link";
 import { ringsBracelets } from "@/data/products";
 
-type SortMode = "price_desc" | "price_asc" | "date_desc" | "date_asc" | "name_asc" | "name_desc";
+type SortMode =
+  | "price_desc"
+  | "price_asc"
+  | "date_desc"
+  | "date_asc"
+  | "name_asc"
+  | "name_desc";
 
 export default function RingsBraceletsPage() {
   const [sortMode, setSortMode] = useState<SortMode>("price_desc");
@@ -24,9 +30,15 @@ export default function RingsBraceletsPage() {
       case "price_desc":
         return list.sort((a, b) => b.price - a.price);
       case "date_asc":
-        return list.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
+        return list.sort(
+          (a, b) =>
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime(),
+        );
       case "date_desc":
-        return list.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        return list.sort(
+          (a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+        );
     }
   }, [sortMode]);
 
@@ -42,7 +54,7 @@ export default function RingsBraceletsPage() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
     );
     cards.forEach((card) => observer.observe(card));
     return () => observer.disconnect();
@@ -53,7 +65,9 @@ export default function RingsBraceletsPage() {
       <div className="catalog-container">
         <div className="catalog-head">
           <h1>Кольца</h1>
-  <Link href="/pages" className="catalog-link">Назад к разделам</Link>
+          <Link href="/pages" className="catalog-link">
+            Назад к разделам
+          </Link>
         </div>
 
         <div className="catalog-controls">
@@ -61,7 +75,12 @@ export default function RingsBraceletsPage() {
           <div className="catalog-sort-wrap">
             <span className="catalog-sort-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 6h10M9 12h8M11 18h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                <path
+                  d="M7 6h10M9 12h8M11 18h6"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
               </svg>
             </span>
             <select
@@ -73,7 +92,6 @@ export default function RingsBraceletsPage() {
               <option value="price_asc">Цена: ↑</option>
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
-
             </select>
           </div>
         </div>
@@ -88,7 +106,13 @@ export default function RingsBraceletsPage() {
             >
               <article className="product-card">
                 <div className="product-image-wrap">
-                  <Image src={product.image} alt={product.name} width={220} height={220} className="product-image"/>
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={220}
+                    height={220}
+                    className="product-image"
+                  />
                 </div>
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>

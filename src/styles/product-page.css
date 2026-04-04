@@ -51,7 +51,7 @@ html.has-no-scroll {
 .product-detail-card {
   background: var(--bg-primary);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -65,7 +65,7 @@ html.has-no-scroll {
     gap: 20px;
     padding: 24px 20px;
   }
-  
+
   .product-detail-image-wrap {
     text-align: center;
   }

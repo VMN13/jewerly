@@ -17,19 +17,20 @@ export default function CartPage() {
   const handleTelegramOrder = () => {
     const message = generateTelegramMessage();
     const telegramUrl = `https://t.me/VMNid?text=${encodeURIComponent(message)}`;
-    window.open(telegramUrl, '_blank');
+    window.open(telegramUrl, "_blank");
   };
 
   const generateTelegramMessage = (): string => {
     if (cartProducts.length === 0) return "Хочу заказать ювелирные изделия!";
 
     const itemsList = cartProducts
-      .map((item) => 
-        `${item.name} (${item.quantity} шт.) - ${item.price.toLocaleString('ru-RU')} BYN`
+      .map(
+        (item) =>
+          `${item.name} (${item.quantity} шт.) - ${item.price.toLocaleString("ru-RU")} BYN`,
       )
-      .join('\n');
+      .join("\n");
 
-    return `🛒 Заказ из корзины:\n\n${itemsList}\n\n💰 Итого: ${totalPrice.toLocaleString('ru-RU')} BYN\n\n📞 Укажите способ доставки и оплаты`;
+    return `🛒 Заказ из корзины:\n\n${itemsList}\n\n💰 Итого: ${totalPrice.toLocaleString("ru-RU")} BYN\n\n📞 Укажите способ доставки и оплаты`;
   };
 
   return (
@@ -43,9 +44,7 @@ export default function CartPage() {
         </div>
 
         {cartProducts.length === 0 ? (
-          <div className="cart-empty">
-            Корзина пуста
-          </div>
+          <div className="cart-empty">Корзина пуста</div>
         ) : (
           <>
             <div className="cart-list">
@@ -64,7 +63,7 @@ export default function CartPage() {
                   <div className="cart-item-content">
                     <h2>{item.name}</h2>
                     <p>{item.description}</p>
-                    
+
                     <div className="cart-item-actions">
                       <div className="cart-qty-row">
                         <button
@@ -72,7 +71,11 @@ export default function CartPage() {
                           className="cart-qty-btn"
                           onClick={() => decreaseFromCart(item.productId)}
                         >
-                          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            aria-hidden="true"
+                          >
                             <path
                               d="M6 12h12"
                               stroke="currentColor"
@@ -87,7 +90,11 @@ export default function CartPage() {
                           className="cart-qty-btn"
                           onClick={() => addToCart(item.productId)}
                         >
-                          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            aria-hidden="true"
+                          >
                             <path
                               d="M12 6v12M6 12h12"
                               stroke="currentColor"
@@ -114,21 +121,22 @@ export default function CartPage() {
             <div className="cart-summary">
               <div className="cart-summary-item">
                 <span>Итого:</span>
-                <strong>{totalPrice.toLocaleString('ru-RU')} BYN</strong>
+                <strong>{totalPrice.toLocaleString("ru-RU")} BYN</strong>
               </div>
             </div>
-            
+
             <div className="cart-footer-actions">
               <button
                 type="button"
                 className="cart-buy-btn"
                 onClick={handleTelegramOrder}
               >
-                💬 Заказать в Telegram ({totalPrice.toLocaleString('ru-RU')} BYN)
+                💬 Заказать в Telegram ({totalPrice.toLocaleString("ru-RU")}{" "}
+                BYN)
               </button>
-              <button 
-                type="button" 
-                className="cart-clear-btn" 
+              <button
+                type="button"
+                className="cart-clear-btn"
                 onClick={clearCart}
               >
                 Очистить корзину

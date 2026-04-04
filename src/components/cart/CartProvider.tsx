@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { products } from "@/data/products";
 
 type CartItem = {
@@ -126,7 +133,11 @@ export default function CartProvider({
   );
 
   const totalUniqueItems = useMemo(() => items.length, [items]);
-  const totalPrice = useMemo(() => cartProducts.reduce((sum, item) => sum + (item.price * item.quantity), 0), [cartProducts]);
+  const totalPrice = useMemo(
+    () =>
+      cartProducts.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    [cartProducts],
+  );
 
   const value = useMemo<CartContextValue>(
     () => ({

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { allProducts } from "@/data/products";
 import { categories } from "@/data/categories";
 
-
 interface BurgerMenuProps {
   isOpen: boolean;
   onClose: () => void;
@@ -12,14 +11,14 @@ interface BurgerMenuProps {
 
 export default function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
   return (
-    <aside className={`burger-menu ${isOpen ? 'open' : ''}`}>
+    <aside className={`burger-menu ${isOpen ? "open" : ""}`}>
       <div className="burger-head">
         <strong>Меню</strong>
         <button className="burger-close" onClick={onClose}>
           ×
         </button>
       </div>
-      
+
       <nav className="burger-categories">
         <strong>Разделы</strong>
         {categories.map((cat) => (
@@ -32,11 +31,10 @@ export default function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
       <nav className="burger-products">
         <strong>Товары ({allProducts.length})</strong>
         <div className="burger-products-list">
-{allProducts.map((product) => (
-
-            <Link 
-              key={product.id} 
-              href={`/product/${product.id}`} 
+          {allProducts.map((product) => (
+            <Link
+              key={product.id}
+              href={`/product/${product.id}`}
               onClick={onClose}
             >
               {product.name}
@@ -47,4 +45,3 @@ export default function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
     </aside>
   );
 }
-

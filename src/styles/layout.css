@@ -1,19 +1,16 @@
 .app-body {
   display: flex;
   flex-direction: column;
-
 }
 
 .app-main {
   flex: 1;
   overflow-y: auto;
-
+  margin-bottom: 20px;
   padding-bottom: 20px;
 }
 
-
 .app-main.product-fullscreen {
-  
   height: 100vh;
   padding-bottom: 0;
 }
@@ -35,11 +32,7 @@
   position: relative;
   top: 0;
   z-index: 50;
-  
 }
-
-
-
 
 .site-footer {
   width: 100%;
@@ -53,11 +46,15 @@
   bottom: 0;
   z-index: 40;
   min-height: var(--footer-height);
+  margin-top: 50px;
 }
 
 .logo-strip {
   display: flex;
   background: var(--bg-secondary);
+  height: 80px;
+  position: relative;
+  z-index: 30;
 }
 
 .logo-strip-grid {
@@ -71,8 +68,8 @@
 .logo-strip-item {
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .header-inner {

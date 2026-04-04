@@ -36,18 +36,21 @@
   color: var(--text-primary);
 }
 
-.burger-categories, .burger-products {
+.burger-categories,
+.burger-products {
   margin-bottom: 30px;
 }
 
-.burger-categories strong, .burger-products strong {
+.burger-categories strong,
+.burger-products strong {
   display: block;
   margin-bottom: 15px;
   font-size: 1.1em;
   color: var(--text-primary);
 }
 
-.burger-categories a, .burger-products a {
+.burger-categories a,
+.burger-products a {
   display: block;
   padding: 12px 8px;
   color: var(--text-secondary);
@@ -57,7 +60,8 @@
   font-size: 0.95em;
 }
 
-.burger-categories a:hover, .burger-products a:hover {
+.burger-categories a:hover,
+.burger-products a:hover {
   background: var(--bg-secondary);
   color: var(--text-primary);
 }
@@ -71,10 +75,8 @@
   height: 100%;
 }
 
-
 @media (min-width: 768px) {
   .burger-menu {
     display: none;
   }
 }
-

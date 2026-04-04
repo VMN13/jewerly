@@ -18,28 +18,23 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
     <header className="site-header">
       <div className="site-shell header-inner">
         <div className="first-menu">
-          <button
+            <button
             type="button"
             className="burger-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            ☰
+            <Image src="/images/burger/burger.svg" alt="Burger menu" width={24} height={24} />
           </button>
-          <Link href="/" className="rs-logo-link">
-           
-           
-          </Link>
+          <Link href="/" className="rs-logo-link"></Link>
           <BurgerMenu isOpen={isMenuOpen} onClose={closeMenu} />
           <CartLink />
           <ThemeToggle />
         </div>
-        
+
         <Link href="/" className="brand">
           Yours Jewerly
-        
         </Link>
       </div>
     </header>
   );
 }
-

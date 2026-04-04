@@ -15,9 +15,12 @@ function buildAssistantReply(input: string, cart: any): string {
 
   if (q.includes("telegram") || q.includes("телеграм") || q.includes("заказ")) {
     if (cart.totalUniqueItems > 0) {
-      const message = cart.cartProducts.map((item: any) => 
-        `• ${item.name} (x${item.quantity}) - ${item.price * item.quantity} BYN`
-      ).join('\\n');
+      const message = cart.cartProducts
+        .map(
+          (item: any) =>
+            `• ${item.name} (x${item.quantity}) - ${item.price * item.quantity} BYN`,
+        )
+        .join("\\n");
       return `📋 Заказ для Telegram:\\n${message}\\n\\n💰 Итого: ${cart.totalPrice} BYN`;
     }
     return "🛒 Корзина пуста. Добавьте товары!";
@@ -34,12 +37,17 @@ function buildAssistantReply(input: string, cart: any): string {
   if (q.includes("возврат") || q.includes("обмен")) return "🔄 14 дней.";
   if (q.includes("размер")) return "📏 Кольца 15-23, браслеты 16-20 см.";
   if (q.includes("кольц")) return "💍 Кольца от 400 BYN.";
-  if (q.includes("серьг") || q.includes("подвес")) return "💎 Серьги от 100 BYN.";
+  if (q.includes("серьг") || q.includes("подвес"))
+    return "💎 Серьги от 100 BYN.";
   if (q.includes("цеп") || q.includes("колье")) return "⛓ Цепи от 200 BYN.";
-  if (q.includes("цен") || q.includes("стоимость")) return "💰 От 100 BYN. 'telegram' для корзины.";
-  if (q.includes("материал") || q.includes("золото")) return "🥇 Золото 585 пробы.";
+  if (q.includes("цен") || q.includes("стоимость"))
+    return "💰 От 100 BYN. 'telegram' для корзины.";
+  if (q.includes("материал") || q.includes("золото"))
+    return "🥇 Золото 585 пробы.";
 
-  const maybeProduct = products.find((p: any) => q.includes(p.name.toLowerCase()));
+  const maybeProduct = products.find((p: any) =>
+    q.includes(p.name.toLowerCase()),
+  );
   if (maybeProduct) {
     return `✨ ${maybeProduct.name}: ${maybeProduct.description} (${maybeProduct.price} BYN)`;
   }
@@ -59,13 +67,14 @@ export default function SupportChat() {
     },
   ]);
 
-  const quickHints = cart.totalUniqueItems > 0 ? [
-    "доставка", "оплата", "размер", "telegram"
-  ] : ["доставка", "оплата", "размер"];
+  const quickHints =
+    cart.totalUniqueItems > 0
+      ? ["доставка", "оплата", "размер", "telegram"]
+      : ["доставка", "оплата", "размер"];
 
   const nextId = useMemo(
     () => (messages.length ? Math.max(...messages.map((m) => m.id)) + 1 : 1),
-    [messages]
+    [messages],
   );
 
   const onSubmit = (e: FormEvent) => {
@@ -93,14 +102,39 @@ export default function SupportChat() {
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? "×" : (
+        {isOpen ? (
+          "×"
+        ) : (
           <svg viewBox="0 0 24 24" fill="none" aria-hidden>
-            <rect x="6" y="7" width="12" height="10" rx="3" stroke="currentColor" strokeWidth="1.8" />
+            <rect
+              x="6"
+              y="7"
+              width="12"
+              height="10"
+              rx="3"
+              stroke="currentColor"
+              strokeWidth="1.8"
+            />
             <circle cx="10" cy="12" r="1.2" fill="currentColor" />
             <circle cx="14" cy="12" r="1.2" fill="currentColor" />
-            <path d="M9 15h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M12 4v3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M8 5.5h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            <path
+              d="M9 15h6"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+            <path
+              d="M12 4v3"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+            <path
+              d="M8 5.5h8"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
           </svg>
         )}
       </button>
@@ -145,7 +179,15 @@ export default function SupportChat() {
               aria-label="Сообщение"
             />
             <button type="submit" aria-label="Отправить">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4"
+              >
                 <line x1="22" y1="2" x2="11" y2="13" />
                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>
@@ -156,4 +198,3 @@ export default function SupportChat() {
     </div>
   );
 }
-

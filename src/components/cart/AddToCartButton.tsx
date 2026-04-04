@@ -1,8 +1,8 @@
- "use client";
+"use client";
 
 import { useState } from "react";
 import { useCart } from "@/components/cart/CartProvider";
-import CartModal from './CartModal';
+import CartModal from "./CartModal";
 
 type AddToCartButtonProps = {
   productId: number;
@@ -34,4 +34,3 @@ export default function AddToCartButton({ productId }: AddToCartButtonProps) {
     </>
   );
 }
- 

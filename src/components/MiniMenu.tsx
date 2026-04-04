@@ -11,7 +11,11 @@ export default function MiniMenu() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="mini-menu-nav" role="navigation" aria-label="Мини меню навигации">
+    <nav
+      className="mini-menu-nav"
+      role="navigation"
+      aria-label="Мини меню навигации"
+    >
       {/* Desktop версия */}
       <ul className="mini-menu-desktop" role="list">
         <li>
@@ -30,7 +34,7 @@ export default function MiniMenu() {
       </ul>
 
       {/* Мобильная кнопка гамбургер */}
-      <button 
+      <button
         className="mini-menu-hamburger"
         aria-label="Переключить меню"
         aria-expanded={isOpen}
@@ -39,7 +43,6 @@ export default function MiniMenu() {
         <span className="hamburger-line"></span>
         <span className="hamburger-line"></span>
         <span className="hamburger-line"></span>
-
       </button>
 
       {/* Мобильное выпадающее меню */}
@@ -63,4 +66,3 @@ export default function MiniMenu() {
     </nav>
   );
 }
-

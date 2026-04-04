@@ -7,7 +7,7 @@ export type CategoryCard = {
 };
 
 export const categories: CategoryCard[] = [
-  {   
+  {
     id: 1,
     title: "Кольца",
     subtitle: "Минималистичные формы и строгая геометрия",

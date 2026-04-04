@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { 
-  ringsBracelets, 
-  earringsPendants, 
-  chainsNecklaces, 
+import {
+  ringsBracelets,
+  earringsPendants,
+  chainsNecklaces,
   newArrivals,
-  allProducts 
+  allProducts,
 } from "@/data/products";
 import AddToCartButton from "@/components/cart/AddToCartButton";
 
@@ -52,7 +52,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
           <div className="product-detail-content">
             <p>{product.description}</p>
-            <p className="product-price">Цена: <strong>{product.price} BYN</strong></p>
+            <p className="product-price">
+              Цена: <strong>{product.price} BYN</strong>
+            </p>
             <div className="product-actions">
               <AddToCartButton productId={product.id} />
               <Link href="/pages" className="catalog-link product-back-link">
@@ -63,14 +65,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </article>
       </div>
       {/* JS для запрета скролла */}
-      <script dangerouslySetInnerHTML={{
-        __html: `
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
           document.body.classList.add('has-no-scroll');
           document.documentElement.classList.add('has-no-scroll');
           window.scrollTo(0, 0);
-        `
-      }} />
+        `,
+        }}
+      />
     </section>
   );
 }
-

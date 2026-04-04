@@ -6,10 +6,5 @@ export default function ProductLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <main className="app-main product-fullscreen">
-      {children}
-    </main>
-  );
+  return <main className="app-main product-fullscreen">{children}</main>;
 }
-
