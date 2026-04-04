@@ -25,7 +25,7 @@ export const categories: CategoryCard[] = [
     id: 3,
     title: "Колье",
     subtitle: "Сдержанный дизайн для повседневного образа",
-    image: "/necklace.png",
+    image: "/necklace.jpeg",
     href: "/pages/chains-necklaces", // ✅ Отдельная страница
   },
   {

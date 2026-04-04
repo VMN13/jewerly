@@ -4,15 +4,17 @@
 @media (min-width: 1025px) {
   .header-inner {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    padding: 0 2rem;
+    gap: 0;
   }
 
   .first-menu {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-right: auto;
   }
 
   .brand {
@@ -32,12 +34,41 @@
     width: 400px;
   }
 
+  .catalog-search {
+    width: 100%;
+  }
+
+  .header-search-input {
+    width: 500px;
+    height: 6vh;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #d4d4d4;
+  }
+
   .burger-toggle {
     display: none;
   }
 
   .mobile-menu-btn {
     display: none !important;
+  }
+
+  .cart {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .cart-info {
+    gap: 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  .cart-badge {
+    font-size: 0.75rem;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 2px;
   }
 }
 
@@ -78,6 +109,13 @@
   .cart-page-container {
     max-width: 1200px;
     margin: 0 auto;
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  .cart-list {
+    flex: 1;
+    overflow-y: auto;
   }
 
   .cart-summary {
@@ -92,15 +130,52 @@
 /* Search dropdown desktop */
 @media (min-width: 1025px) {
   .search-dropdown {
-    max-width: 600px;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 500px;
+    display: none !important;
+  }
+
+  .search-input-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  .header-search-overlay {
+    position: absolute;
+  }
+
+  .catalog-search {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+  }
+
+  .search-dropdown-desktop {
+    display: flex;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 400px;
+    margin-top: 4px;
+    width: 100%;
+    margin: auto;
   }
 
   .search-result-item {
-    gap: 16px;
-    padding: 16px 20px;
+    gap: 12px;
+    display: flex;
+    padding: 12px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-result-item div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .search-result-image {
@@ -109,16 +184,7 @@
   }
 }
 
-/* Logo strip desktop */
-@media (min-width: 1025px) {
-  .logo-strip-grid {
-    gap: 16px;
-  }
 
-  .logo-strip-image {
-    width: 160px;
-  }
-}
 
 /* Support chat desktop */
 @media (min-width: 1025px) {

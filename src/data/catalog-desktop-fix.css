@@ -1,0 +1,29 @@
+/* Desktop fixes for catalog - can replace src/data/catalog.css if needed */
+.catalog-controls {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 1025px) {
+  .catalog-controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px;
+  }
+  .catalog-controls > * {
+    width: 100% !important;
+  }
+  .catalog-sort-wrap {
+    margin-right: 0 !important;
+  }
+  .catalog-sort-wrap::before {
+    content: "Сортировать по:";
+    font-size: 0.92rem;
+    color: #111;
+    margin-right: 8px;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+}

@@ -69,11 +69,15 @@
 }
 
 .header-search {
+  display: none;
+}
+
+.header-search-desktop .catalog-search {
+  position: relative;
+}
+
+.header-search-desktop {
   display: flex;
-  width: 80%;
-  margin: auto;
-  justify-content: start;
-  min-width: 0;
   order: 3;
 }
 

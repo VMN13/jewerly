@@ -12,6 +12,7 @@ export default function SearchInput() {
 
   const [showDropdown, setShowDropdown] = useState(false);
 
+
   const router = useRouter();
 
   const suggestion = useMemo(() => {
@@ -39,9 +40,12 @@ export default function SearchInput() {
               product.name.toLowerCase().includes(normalizedQuery) ||
               product.description.toLowerCase().includes(normalizedQuery),
           )
+
           .slice(0, 5);
         setSearchResults(results as any);
+
         setShowDropdown(results.length > 0);
+
       } else {
         setSearchResults([] as any);
         setShowDropdown(false);
@@ -86,7 +90,10 @@ export default function SearchInput() {
         onKeyDown={handleKeyDown}
         autoComplete="off"
       />
+
+
       {showDropdown && searchResults.length > 0 && (
+
         <div className="search-dropdown">
           {searchResults.map((product) => (
             <div
@@ -114,6 +121,35 @@ export default function SearchInput() {
           </div>
         </div>
       )}
+      {showDropdown && searchResults.length > 0 && (
+        <div className="search-dropdown-desktop">
+          {searchResults.map((product) => (
+            <div
+              key={product.id}
+              className="search-result-item"
+              onMouseDown={() => handleResultClick(product)}
+            >
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={80}
+                height={80}
+                className="search-result-image"
+              />
+              <div>
+                <h4>{product.name}</h4>
+                <p>{product.price} BYN</p>
+              </div>
+            </div>
+          ))}
+          <div className="search-result-footer">
+            <Link href={`/search?q=${encodeURIComponent(query)}`}>
+              Показать все результаты
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+

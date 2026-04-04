@@ -25,7 +25,6 @@ import "@/styles/product-page.css";
 import "@/styles/cart.css";
 import "@/styles/buttons.css";
 import "@/styles/responsive.css";
-
 import "@/styles/search-overlay.css";
 import "@/styles/desktop.css";
 

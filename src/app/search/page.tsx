@@ -10,9 +10,15 @@ import ImagePreview from "@/components/ImagePreview";
 function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q")?.toLowerCase().trim() || "";
+  const sortParam = searchParams.get("sort") || "name";
+  const sortMode = (sortParam as "name" | "price") || "name";
 
   const matches = products
     .filter((product) => product.name.toLowerCase().includes(query))
+    .sort((a, b) => {
+      if (sortMode === "price") return b.price - a.price;
+      return a.name.localeCompare(b.name, "ru");
+    })
     .slice(0, 2);
 
   if (!query) {

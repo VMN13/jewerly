@@ -173,7 +173,7 @@
   border-radius: 120px;
 }
 
-/* Desktop: Position sort select below search input */
+/* Desktop: Position sort select below search input + label */
 @media (min-width: 1025px) {
   .catalog-controls {
     flex-direction: column !important;
