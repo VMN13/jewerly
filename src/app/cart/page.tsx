@@ -38,7 +38,7 @@ export default function CartPage() {
         <div className="cart-page-head">
           <h1>Корзина</h1>
           <Link href="/pages" className="catalog-link">
-            ← Вернуться в каталог
+            Вернуться в каталог
           </Link>
         </div>
 

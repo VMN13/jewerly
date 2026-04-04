@@ -6,9 +6,19 @@
 
 @media (max-width: 640px) {
  
-  .header-inner,
+
   .footer-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+  .header-inner {
+ display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
   }
 
@@ -33,7 +43,7 @@
   }
 
   .header-search-input {
-    width: 280px;
+    width: 170px;
     border: 1px solid #d4d4d4;
     border-radius: 10px;
     font-size: 20px;
@@ -42,7 +52,7 @@
 
 
   .catalog-sort-icon {
-    width: 28px;
+    width: 45px;
     height: 28px;
   }
 
@@ -66,7 +76,7 @@
   }
 
 a.cart {
-  position: fixed;
+  position: absolute;
   right: 20px;
   top:10px;
   border: 1px solid #d4d4d4;
@@ -106,6 +116,7 @@ a.cart {
 
   .catalog-head {
     display: flex;
+    width: 100%;
     flex-direction: row;
     color: #111;
     font-style: italic; 
@@ -115,23 +126,65 @@ a.cart {
 
   .catalog-head h1 {
     font-size: 30px;
+    width: 150px;
   }
 
   .catalog-link {
   color: #111;
   text-decoration: none;
- border: 1px solid #d4d4d4;
+  border: 1px solid #d4d4d4;
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   border-radius: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 30px;
   text-align: center;
-  width: 30vh;
+  width: 300px;
+  
+}
+
+
+.cart-modal{
+  display: flex;
+  justify-content: center;
+}
+
+.cart-modal-head {
+  font-size: 15px;
+}
+
+
+.cart-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+
+}
+
+.burger-toggle {
+  position: absolute;
+  left:  20px;
+  top: 10px;
+  font-size: 20px;
+}
+
+
+.cart-modal-btn {
+  width: 180px;
+  border: solid 1px;
+  border-radius: 10px;
+}
+
+.cart-modal-continue {
+  width: 180px;
+  border: solid 1px;
+  border-radius: 10px;
 }
 
   .category-list {
-    gap: 0px;
+    gap: 5px;
   }
 
   .category-card {
@@ -187,8 +240,9 @@ a.cart {
   }
 
   .cart-page-head {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
   }
 
   .cart-summary {
@@ -199,9 +253,7 @@ a.cart {
     grid-template-columns: 1fr;
   }
 
-  .cart-item {
-    grid-template-columns: 1fr;
-  }
+ 
 
   .cart-item-image-wrap {
     width: 100%;

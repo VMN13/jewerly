@@ -12,6 +12,8 @@ import "@/styles/globals.css";
 import "@/styles/layout.css";
 import "@/styles/header.css";
 import "@/styles/mobile-menu.css";
+import "@/styles/burger-menu.css";
+
 import "@/styles/support-chat.css";
 import "@/data/catalog.css";
 import "@/styles/products.css";

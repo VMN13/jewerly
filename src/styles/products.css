@@ -15,8 +15,8 @@
   background: #fff;
   color: #111;
   padding: 12px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   gap: 10px;
   min-width: 0;
   opacity: 0;
@@ -29,6 +29,10 @@
   will-change: opacity, transform;
   height: 100%;
   border-radius: 20px;
+}
+
+.product-card > *:nth-child(3) {
+  margin-top: auto;
 }
 
 .product-card.is-visible {
@@ -74,4 +78,10 @@
   min-width: 0;
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+.product-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #c40000;
 }

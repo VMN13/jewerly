@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { newArrivals } from "@/data/products";
 
-type SortMode = "date_desc" | "date_asc" | "name_asc" | "name_desc";
+type SortMode = "price_desc" | "price_asc" | "name_asc" | "name_desc";
 
 export default function NewArrivalsPage() {
   const [sortMode, setSortMode] = useState<SortMode>("date_desc");
@@ -21,9 +21,9 @@ export default function NewArrivalsPage() {
         return list.sort((a, b) => a.name.localeCompare(b.name, "ru"));
       case "name_desc":
         return list.sort((a, b) => b.name.localeCompare(a.name, "ru"));
-      case "date_desc":
+      case "price_desc":
       default:
-        return list.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        return list.sort((a, b) => b.price - a.price);
     }
   }, [sortMode]);
 
@@ -49,7 +49,7 @@ export default function NewArrivalsPage() {
       <div className="catalog-container">
         <div className="catalog-head">
           <h1>Новые поступления</h1>
-          <Link href="/" className="catalog-link">← Назад к разделам</Link>
+  <Link href="/pages" className="catalog-link">Назад к разделам</Link>
         </div>
 
         <div className="catalog-controls">
@@ -65,8 +65,8 @@ export default function NewArrivalsPage() {
               onChange={(e) => setSortMode(e.target.value as SortMode)}
               className="catalog-sort-select catalog-sort-select-compact"
             >
-              <option value="date_desc">По дате: новые</option>
-              <option value="date_asc">По дате: старые</option>
+              <option value="price_desc">Цена: ↓ (дорогие сначала)</option>
+              <option value="price_asc">Цена: ↑ (дешёвые сначала)</option>
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
             </select>

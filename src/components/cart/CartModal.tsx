@@ -31,9 +31,7 @@ export default function CartModal({ isOpen, onClose }: { isOpen: boolean; onClos
       <div className="cart-modal" onClick={(e) => e.stopPropagation()}>
         <div className="cart-modal-head">
           <h3>Товар добавлен в корзину!</h3>
-          <button className="cart-modal-close" onClick={onClose}>
-            X
-          </button>
+          
         </div>
         <div className="cart-modal-body">
           <button className="cart-modal-btn" onClick={goToCart}>

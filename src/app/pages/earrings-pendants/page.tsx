@@ -6,24 +6,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { earringsPendants } from "@/data/products";
 
-type SortMode = "date_desc" | "date_asc" | "name_asc" | "name_desc";
+type SortMode = "price_desc" | "price_asc" | "date_desc" | "date_asc" | "name_asc" | "name_desc";
 
 export default function EarringsPendantsPage() {
-  const [sortMode, setSortMode] = useState<SortMode>("date_desc");
+  const [sortMode, setSortMode] = useState<SortMode>("price_desc");
 
   const sortedProducts = useMemo(() => {
     const list = [...earringsPendants];
 
     switch (sortMode) {
-      case "date_asc":
-        return list.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
+      case "price_asc":
+        return list.sort((a, b) => a.price - b.price);
       case "name_asc":
         return list.sort((a, b) => a.name.localeCompare(b.name, "ru"));
       case "name_desc":
         return list.sort((a, b) => b.name.localeCompare(a.name, "ru"));
+      case "price_desc":
+        return list.sort((a, b) => b.price - a.price);
+      case "date_asc":
+        return list.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
       case "date_desc":
-      default:
         return list.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      default:
+        return list;
     }
   }, [sortMode]);
 
@@ -48,8 +53,8 @@ export default function EarringsPendantsPage() {
     <section className="catalog-section">
       <div className="catalog-container">
         <div className="catalog-head">
-          <h1>Серьги и подвески</h1>
-          <Link href="/" className="catalog-link">← Назад к разделам</Link>
+          <h1>Серьги</h1>
+  <Link href="/pages" className="catalog-link">Назад к разделам</Link>
         </div>
 
         <div className="catalog-controls">
@@ -65,8 +70,10 @@ export default function EarringsPendantsPage() {
               onChange={(e) => setSortMode(e.target.value as SortMode)}
               className="catalog-sort-select catalog-sort-select-compact"
             >
-              <option value="date_desc">По дате: новые</option>
-              <option value="date_asc">По дате: старые</option>
+              <option value="price_desc">Цена: ↓</option>
+              <option value="price_asc">Цена: ↑</option>
+              <option value="date_desc">Дата: новые</option>
+              <option value="date_asc">Дата: старые</option>
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
             </select>

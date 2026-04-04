@@ -12,12 +12,12 @@ import {
   newArrivals 
 } from '@/data/products';
 
-type SortMode = 'date_desc' | 'date_asc' | 'name_asc' | 'name_desc';
+type SortMode = 'price_desc' | 'price_asc' | 'date_desc' | 'date_asc' | 'name_asc' | 'name_desc';
 
 export default function CategoryPage() {
   const params = useParams();
   const category = params.category as string;
-  const [sortMode, setSortMode] = useState<SortMode>('date_desc');
+  const [sortMode, setSortMode] = useState<SortMode>('price_desc');
 
   // ✅ Берем ТОЧНЫЙ массив по категории (БЕЗ фильтра!)
   const getProductsByCategory = (cat: string) => {
@@ -36,15 +36,18 @@ export default function CategoryPage() {
     const products = [...categoryProducts];
     
     switch (sortMode) {
+      case 'price_asc':
+        return products.sort((a, b) => a.price - b.price);
+      case 'price_desc':
+        return products.sort((a, b) => b.price - a.price);
       case 'date_asc':
         return products.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
+      case 'date_desc':
+        return products.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
       case 'name_asc':
         return products.sort((a, b) => a.name.localeCompare(b.name, 'ru'));
       case 'name_desc':
         return products.sort((a, b) => b.name.localeCompare(a.name, 'ru'));
-      case 'date_desc':
-      default:
-        return products.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
     }
   }, [categoryProducts, sortMode]);
 
@@ -99,8 +102,10 @@ export default function CategoryPage() {
               onChange={(e) => setSortMode(e.target.value as SortMode)}
               className="catalog-sort-select catalog-sort-select-compact"
             >
-              <option value="date_desc">По дате: новые</option>
-              <option value="date_asc">По дате: старые</option>
+              <option value="price_desc">Цена: ↓</option>
+              <option value="price_asc">Цена: ↑</option>
+              <option value="date_desc">Дата: новые</option>
+              <option value="date_asc">Дата: старые</option>
               <option value="name_asc">А→Я</option>
               <option value="name_desc">Я→А</option>
             </select>

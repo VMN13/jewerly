@@ -17,13 +17,18 @@
 
 .catalog-head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
   border-bottom: 1px solid #d4d4d4;
   padding-bottom: 12px;
-  
 }
+
+.catalog-head h1 {
+  flex: 1;
+  margin: 0;
+}
+
 
 
 .catalog-link {
@@ -44,14 +49,14 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
   margin-bottom: 18px;
 }
 
 .catalog-sort-wrap {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  margin-right: 5px;
+  width: 150px;
 }
 
 .catalog-sort-icon {
