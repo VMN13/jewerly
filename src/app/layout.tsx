@@ -30,6 +30,7 @@ import "@/styles/desktop.css";
 import "@/styles/responsive.css";
 import "@/styles/video-hero.css";
 import "@/styles/video-hero-mobile.css";
+import "@/styles/category-list.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -90,10 +91,13 @@ export default function RootLayout({
         <CartProvider>
           <Providers>
             <Header />
-            <main className="app-main">{children}</main>
-            <LogoStrip />
+            <main className="app-main">
+              {children}
+              <LogoStrip />
+            </main>
             <Footer />
             <SupportChat />
+
           </Providers>
         </CartProvider>
       </body>

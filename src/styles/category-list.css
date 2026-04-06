@@ -1,0 +1,17 @@
+/* Category list responsive */
+
+@media (min-width: 1025px) {
+  .category-list {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

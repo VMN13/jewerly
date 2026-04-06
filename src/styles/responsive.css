@@ -24,11 +24,6 @@
     align-items: center;
   }
 
-  .logo-strip-grid {
-    margin-top: 10%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    background-color: #c40000;
-  }
 
   .logo-strip-image {
     display: flex;
@@ -236,8 +231,14 @@
   }
 
   .category-list {
-    gap: 5px;
+    display: flex;
+    flex-direction: column;
   }
+
+
+
+
+
 
   .category-card {
     min-height: 85vh;
@@ -443,11 +444,7 @@
 }
 
 
-.category-list {
-  height: 200px;
-height: 200px;
-height: 200px;
-}
+
 }
 
 

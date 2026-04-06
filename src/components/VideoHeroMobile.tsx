@@ -13,7 +13,6 @@ export default function VideoHeroMobile() {
           loop
           muted
           playsInline
-          poster="/images/header.jpg"
         />
         <div className="video-overlay" />
       </section>

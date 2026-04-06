@@ -13,6 +13,8 @@ export default function Home() {
       <VideoHeroMobile />
       <section className="home-categories-section">
 
+
+
         <div className="home-categories-container">
           <div className="catalog-head">
             <div color="catalog-first">
