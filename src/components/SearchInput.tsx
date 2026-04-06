@@ -141,12 +141,9 @@ export default function SearchInput() {
               </div>
             </div>
           ))}
-          <div className="search-result-footer">
-            <Link href={`/search?q=${encodeURIComponent(query)}`}>
-              Показать все результаты
-            </Link>
+       
           </div>
-        </div>
+       
       )}
     </div>
   );

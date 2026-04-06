@@ -28,9 +28,9 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
         <BurgerMenu isOpen={isMenuOpen} onClose={closeMenu} />
         <ThemeToggle />
       </div>
-      <Link href="/" className="brand">
-        Yours Jewerly
-      </Link>
+        <Link href="/" className="brand">
+          Yours <span className="j-gold">J</span>ewerly
+        </Link>
       <CartLink />
     </header>
   );

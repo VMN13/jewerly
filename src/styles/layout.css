@@ -38,20 +38,6 @@
   justify-self: start;
 }
 
-.site-footer {
-  width: 100%;
-  height: var(--footer-height);
-  border-top: 1px solid var(--border);
-  background: var(--bg-primary);
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  position: relative;
-  bottom: 0;
-  z-index: 40;
-  min-height: var(--footer-height);
-  margin-top: 50px;
-}
 
 
   .logo-strip-image {
@@ -68,7 +54,8 @@
   gap: 8px;
   align-items: center;
   height: 100%;
-  background-color: #c40000;
+  margin-top: 40px;
+  background-color: #aa0909;
   
 }
 
@@ -81,21 +68,14 @@
 }
 
 
-.header-inner {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  height: 100%;
-}
-
 .footer-inner {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 10px;
+  
   font-size: clamp(0.8rem, 1.5vw, 0.95rem);
   color: var(--text-primary);
+  height: 100px;
 }

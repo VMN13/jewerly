@@ -1,10 +1,4 @@
-@media (max-width: 1024px) {
-  .category-card {
-    min-height: calc(
-      100vh - var(--header-height) - var(--footer-height) - 32px
-    );
-  }
-}
+
 
 @media (max-width: 640px) {
   .video-hero-section {

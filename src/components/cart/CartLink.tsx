@@ -13,6 +13,8 @@ export default function CartLink() {
     <Link className="cart" href="/cart">
       <div className="cart-container">
         <span className="cart-info">
+
+          <div className="cart_basket">
           <Image
             src="/images/basket.svg"
             alt="🛍️ Корзина"
@@ -21,6 +23,9 @@ export default function CartLink() {
             className="cart-icon-image"
           />{" "}
           <span className="cart-badge">{totalItems}</span> |{" "}
+          </div>
+
+
           {totalPrice.toLocaleString("ru-RU")} BYN
         </span>
       </div>
