@@ -3,15 +3,9 @@
   flex-direction: column;
 }
 
-.app-main {
-  flex: 1;
-  overflow-y: auto;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-}
 
 .app-main.product-fullscreen {
-  height: 100vh;
+  height: 60vh;
   padding-bottom: 0;
 }
 
@@ -50,7 +44,7 @@
 }
 
 .logo-strip {
-  background: var(--bg-secondary);
+ 
   height: 20vh;
   z-index: 30;
 }

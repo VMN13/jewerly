@@ -16,9 +16,9 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
   if (hideHeader) return null;
 
   return (
+    <>
     <header className="site-header">
-      <div className="site-shell header-inner">
-        <div className="first-menu">
+      <div className="two_buttons">
             <button
             type="button"
             className="burger-toggle"
@@ -26,21 +26,15 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
           >
             <Image src="/images/burger/burger.svg" alt="Burger menu" width={24} height={24} />
           </button>
-          <Link href="/" className="rs-logo-link"></Link>
           <BurgerMenu isOpen={isMenuOpen} onClose={closeMenu} />
-          <CartLink />
           <ThemeToggle />
-          <div className="header-search-desktop">
-            <div className="search-input-flex">
-              
-            </div>
           </div>
-        </div>
-
-        <Link href="/" className="brand">
+    <CartLink />
+    
+    </header>
+    <Link href="/" className="brand">
           Yours Jewerly
         </Link>
-      </div>
-    </header>
+    </>
   );
 }

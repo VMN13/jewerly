@@ -24,6 +24,7 @@
   transition: background-color 0.2s;
   flex-wrap: nowrap;
   align-items: center;
+  width: 20%;
 }
 
 .search-result-item:hover {

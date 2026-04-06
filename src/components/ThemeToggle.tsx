@@ -16,7 +16,7 @@ export default function ThemeToggle() {
 {theme === "light" ? (
   <Image src="/images/toggle/moon.svg" alt="Moon" width={20} height={20} />
 ) : (
-  <Image src="/images/toggle/sun.svg" alt="Sun" width={20} height={20} />
+  <Image  src="/images/toggle/sun.svg" alt="Sun" width={20} height={20} />
 )}
     </button>
   );

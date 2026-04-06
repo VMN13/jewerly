@@ -93,7 +93,6 @@ export default function SearchInput() {
 
 
       {showDropdown && searchResults.length > 0 && (
-
         <div className="search-dropdown">
           {searchResults.map((product) => (
             <div
