@@ -5,6 +5,7 @@ import SearchInput from "@/components/SearchInput";
 import Image from "next/image";
 import Link from "next/link";
 import { chainsNecklaces } from "@/data/products";
+import CatalogAddToCartButton from "@/components/cart/CatalogAddToCartButton";
 
 type SortMode = "price_desc" | "price_asc" | "name_asc" | "name_desc";
 
@@ -101,6 +102,7 @@ export default function ChainsNecklacesPage() {
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
                 <p>{product.price} BYN</p>
+                <CatalogAddToCartButton productId={product.id} />
               </article>
             </Link>
           ))}

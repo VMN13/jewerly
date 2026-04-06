@@ -5,6 +5,7 @@ import SearchInput from "@/components/SearchInput";
 import Image from "next/image";
 import Link from "next/link";
 import { ringsBracelets } from "@/data/products";
+import CatalogAddToCartButton from "@/components/cart/CatalogAddToCartButton";
 
 type SortMode =
   | "price_desc"
@@ -117,6 +118,7 @@ export default function RingsBraceletsPage() {
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
                 <p>{product.price} BYN</p>
+                <CatalogAddToCartButton productId={product.id} />
               </article>
             </Link>
           ))}

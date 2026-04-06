@@ -1,1 +1,11 @@
-# Task Complete: Logo Navigation & Hover Removal&#10;&#10;- [x] Hover effect removed from main page category cards (src/data/catalog.css)&#10;- [x] RS Logo wrapped in Link href="/" (src/components/Header.tsx)&#10;&#10;## Test:&#10;npm run dev&#10;- Main page: No lift/shadow hover on rings/earrings photos&#10;- Subpages (/search etc.): Click RS logo → returns to home (/)
+кно# TODO: Add Cart Button to Catalog Pages
+
+## Plan Steps:
+- [x] Step 1: Update main dynamic catalog `src/app/pages/[category]/page.tsx` - add import and AddToCartButton to each product card
+- [x] Step 2: Update main catalog `src/app/pages/page.tsx` - add import and AddToCartButton to each product card
+- [x] Step 3: Check and update specific category pages if they differ (rings-bracelets, earrings-pendants, chains-necklaces, new-arrivals)
+- [x] Step 4: Test functionality on dev server (run `npm run dev`)
+- [x] Step 5: Complete task
+
+Current progress: Starting Step 1
+

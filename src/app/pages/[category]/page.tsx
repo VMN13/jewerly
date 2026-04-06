@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import Image from "next/image";
 import ImagePreview from "@/components/ImagePreview";
+import CatalogAddToCartButton from "@/components/cart/CatalogAddToCartButton";
 
 import {
   ringsBracelets,
@@ -169,6 +170,7 @@ export default function CategoryPage() {
                 <p className="product-price">
                   Цена: <strong>{product.price} BYN</strong>
                 </p>
+                <CatalogAddToCartButton productId={product.id} />
               </article>
             </Link>
           ))}
