@@ -36,7 +36,7 @@ export default function ImagePreview({ src, alt, width, height, className }: Ima
         tabIndex={0}
         onKeyDown={(e) => e.key === "Enter" && openPreview(src)}
       >
-        <Image src={src} alt={alt || ''} width={width || 300} height={height || 300} className={"w-full h-full object-cover " + (className || "")} />
+        <Image src={src} alt={alt || ''} width={width || 300} height={height || 300} loading="lazy" className={"w-full h-full object-cover " + (className || "")} />
       </div>
 
       {isOpen && (

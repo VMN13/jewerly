@@ -180,10 +180,11 @@
 
   .cart-modal-body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     font-size: 15px;
     font-weight: 600;
+    width: 100%;
   }
 
   .burger-toggle {
@@ -194,15 +195,17 @@
   }
 
   .cart-modal-btn {
-    width: 180px;
+    width: 50%;
     border: solid 1px;
     border-radius: 10px;
+    border: 1px solid #d4d4d4;
   }
 
   .cart-modal-continue {
-    width: 180px;
-    border: solid 1px;
+    width: 50%;
     border-radius: 10px;
+    border: solid 1px;
+     border: 1px solid #d4d4d4;
   }
 
   .category-list {
@@ -267,6 +270,20 @@
   .cart-page-container {
     width: 90%;
   }
+
+  .cart-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  height: 20vh;
+  font-size: 30px;
+  font-weight: 600;
+}
 
   .cart-page-head {
     display: flex;

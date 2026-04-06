@@ -113,8 +113,10 @@ export default function EarringsPendantsPage() {
                     alt={product.name}
                     width={220}
                     height={220}
+                    loading="lazy"
                     className="product-image"
                   />
+
                 </div>
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>

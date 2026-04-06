@@ -47,8 +47,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
               alt={product.name}
               width={360}
               height={360}
+              priority
               className="product-detail-image"
             />
+
           </div>
           <div className="product-detail-content">
             <p>{product.description}</p>

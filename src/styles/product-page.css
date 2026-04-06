@@ -22,7 +22,7 @@ html.has-no-scroll {
 /* Стили для страницы товара */
 .product-page-section {
   min-height: 100vh;
-  padding: 20px 0;
+ 
 }
 
 .product-page-container {
@@ -107,7 +107,7 @@ html.has-no-scroll {
   align-items: center;
   justify-content: center;
   padding: 10px 14px;
-  border: 1px solid var(--text-primary);
+    border: 1px solid #d4d4d4;
   background: var(--bg-primary);
   color: var(--text-primary);
   border-radius: 10px;

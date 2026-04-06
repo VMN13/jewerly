@@ -15,9 +15,13 @@
   width: 100%;
 }
 
+.cart-remove-btn {
+  width: 140px;
+}
+
 .cart-qty-btn {
-  width: 28px;
-  height: 28px;
+  width: 35px;
+  height: 38px;
   min-width: 28px;
   padding: 0;
   border-radius: 6px;
@@ -60,7 +64,7 @@
   font-size: 20px;
   background: var(--bg-primary);
   color: var(--text-primary);
-  border: 1px solid var(--text-primary);
+   border: 1px solid #d4d4d4;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
