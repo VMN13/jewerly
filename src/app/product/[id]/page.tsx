@@ -1,4 +1,4 @@
-"use client";
+
 
 import Image from "next/image";
 import Link from "next/link";
@@ -35,12 +35,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <section className="product-page-section">
       <div className="product-page-container">
-        <div className="product-page-head">
-          <h1>{product.name}</h1>
-          <p>Артикул: #{product.id}</p>
-        </div>
-
         <article className="product-detail-card">
+          <div className="product-detail-head">
+            <h1>{product.name}</h1>
+            <p>Артикул: #{product.id}</p>
+          </div>
           <div className="product-detail-image-wrap">
             <Image
               src={product.image}
@@ -50,7 +49,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
               priority
               className="product-detail-image"
             />
-
           </div>
           <div className="product-detail-content">
             <p>{product.description}</p>

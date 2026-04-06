@@ -27,6 +27,9 @@ import "@/styles/buttons.css";
 import "@/styles/responsive.css";
 import "@/styles/search-overlay.css";
 import "@/styles/desktop.css";
+import "@/styles/responsive.css";
+import "@/styles/video-hero.css";
+import "@/styles/video-hero-mobile.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

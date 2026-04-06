@@ -95,9 +95,9 @@
 
 .category-card {
   position: relative;
-  border: 1px solid #d4d4d4;
-  background: #fff;
-  color: #fff;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   text-decoration: none;
   display: block;
   min-height: calc(80vh - var(--header-height) - var(--footer-height) - 40px);
@@ -168,7 +168,7 @@
   z-index: 1;
 }
 
-.logo-strip-image {
+-image {
   width: 20vh;
   border-radius: 120px;
 }

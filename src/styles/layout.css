@@ -5,7 +5,7 @@
 
 
 .app-main.product-fullscreen {
-  height: 60vh;
+  height: 600px;
   padding-bottom: 0;
 }
 
@@ -20,12 +20,22 @@
   height: 15vh;
   border-bottom: 1px solid var(--border);
   background: var(--bg-primary);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  justify-items: center;
   flex-shrink: 0;
   position: relative;
   top: 0;
   z-index: 50;
+  gap: 2rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-self: start;
 }
 
 .site-footer {
@@ -43,11 +53,12 @@
   margin-top: 50px;
 }
 
-.logo-strip {
- 
-  height: 20vh;
-  z-index: 30;
-}
+
+  .logo-strip-image {
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+  }
 
 .logo-strip-grid {
   display: flex;
@@ -56,6 +67,7 @@
   align-items: center;
   height: 100%;
   background-color: #c40000;
+  
 }
 
 .logo-strip-item {
@@ -63,7 +75,9 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
 }
+
 
 .header-inner {
   width: 100%;

@@ -85,10 +85,10 @@
 }
 
 .product-actions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  display: flex;
+  gap: 20px;
   width: 100%;
+  margin-top: 40px;
 }
 
 /* Добавить в конец buttons.css */

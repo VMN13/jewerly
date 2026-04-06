@@ -75,8 +75,4 @@
   height: 100%;
 }
 
-@media (min-width: 768px) {
-  .burger-menu {
-    display: none;
-  }
-}
+/* Burger menu always available, but hidden by default on desktop unless toggled */

@@ -16,25 +16,22 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
   if (hideHeader) return null;
 
   return (
-    <>
     <header className="site-header">
-      <div className="two_buttons">
-            <button
-            type="button"
-            className="burger-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <Image src="/images/burger/burger.svg" alt="Burger menu" width={24} height={24} />
-          </button>
-          <BurgerMenu isOpen={isMenuOpen} onClose={closeMenu} />
-          <ThemeToggle />
-          </div>
-    <CartLink />
-    
+      <div className="header-left">
+        <button
+          type="button"
+          className="burger-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <Image src="/images/burger/burger.svg" alt="Burger menu" width={24} height={24} />
+        </button>
+        <BurgerMenu isOpen={isMenuOpen} onClose={closeMenu} />
+        <ThemeToggle />
+      </div>
+      <Link href="/" className="brand">
+        Yours Jewerly
+      </Link>
+      <CartLink />
     </header>
-    <Link href="/" className="brand">
-          Yours Jewerly
-        </Link>
-    </>
   );
 }

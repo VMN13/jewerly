@@ -95,6 +95,9 @@
 
 .category-card {
   position: relative;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   border: 1px solid #d4d4d4;
   background: #fff;
   color: #fff;
