@@ -95,9 +95,7 @@ export default function CategoryPage() {
         <div className="catalog-container">
           <div className="catalog-head">
             <h1>Категория не найдена</h1>
-            <Link href="/pages" className="catalog-link">
-              Все категории
-            </Link>
+
           </div>
         </div>
       </section>

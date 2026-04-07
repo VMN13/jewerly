@@ -5,7 +5,7 @@ Status: PLAN APPROVED
 Completed Steps:
 - [x] 1. Added desktop media query to src/data/catalog.css
 
-Status: Complete ✅ (stack + label)
+Status: Complete ✅ (stack + label + mobile hide)
 
-Details: Stack sort select below input on desktop only via CSS flex-direction: column @media (min-width: 1025px)
+Details: Stack sort select below input on desktop only via CSS flex-direction: column @media (min-width: 1025px). Desktop preliminary search hidden on mobile via CSS display: none.
 

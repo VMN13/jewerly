@@ -265,10 +265,7 @@ a.cart {
 
 /* Search dropdown desktop */
 
-  .search-dropdown {
-    display: none !important;
-  }
-
+ 
   .search-input-flex {
     display: flex;
     flex-direction: row;
@@ -288,6 +285,7 @@ a.cart {
   }
 
   .search-dropdown-desktop {
+    
     display: flex;
     background: var(--bg-primary);
     border: 1px solid var(--border);
@@ -308,15 +306,10 @@ a.cart {
     padding: 12px;
     flex-direction: row;
     align-items: center;
-    width: 38%;
+    width: 100%; 
   }
 
-  .search-result-item div {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
+ 
   .search-result-image {
     width: 80px;
     height: 80px;

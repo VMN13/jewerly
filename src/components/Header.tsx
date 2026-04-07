@@ -1,9 +1,10 @@
-"use client";
+ "use client";
 
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SearchInput from "@/components/SearchInput";
+
 import CartLink from "@/components/cart/CartLink";
 import BurgerMenu from "@/components/BurgerMenu";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -31,7 +32,9 @@ export default function Header({ hideHeader }: { hideHeader?: boolean }) {
         <Link href="/" className="brand">
           Yours <span className="j-gold">J</span>ewerly
         </Link>
-      <CartLink />
+<CartLink />
     </header>
+
   );
 }
+

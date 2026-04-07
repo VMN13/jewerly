@@ -11,15 +11,7 @@
   opacity: 0.5;
 }
 
-.search-active .search-dropdown {
-  z-index: 10000;
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: var(--overlay-bg);
-}
+
 
 .search-active .catalog-search {
   position: fixed;

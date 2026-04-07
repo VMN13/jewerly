@@ -12,6 +12,17 @@ export default function SearchInput() {
 
   const [showDropdown, setShowDropdown] = useState(false);
 
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const media = window.matchMedia('(min-width: 768px)');
+      setIsDesktop(media.matches);
+      const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+      media.addEventListener('change', listener);
+      return () => media.removeEventListener('change', listener);
+    }
+  }, []);
 
   const router = useRouter();
 
@@ -92,7 +103,7 @@ export default function SearchInput() {
       />
 
 
-      {showDropdown && searchResults.length > 0 && (
+{showDropdown && searchResults.length > 0 && !isDesktop && (
         <div className="search-dropdown">
           {searchResults.map((product) => (
             <div
@@ -120,7 +131,7 @@ export default function SearchInput() {
           </div>
         </div>
       )}
-      {showDropdown && searchResults.length > 0 && (
+{showDropdown && searchResults.length > 0 && isDesktop && (
         <div className="search-dropdown-desktop">
           {searchResults.map((product) => (
             <div
@@ -148,4 +159,3 @@ export default function SearchInput() {
     </div>
   );
 }
-
