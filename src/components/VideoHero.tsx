@@ -9,6 +9,7 @@ export default function VideoHero() {
         <video
           className="video-hero"
           src="/Video/video.mp4"
+          preload="metadata"
           autoPlay
           loop
           muted
