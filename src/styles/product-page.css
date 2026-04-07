@@ -21,12 +21,12 @@ html.has-no-scroll {
 
 /* Стили для страницы товара */
 .product-page-section {
-  min-height: 100vh;
+ margin-top: 3%;
  
 }
 
 .product-page-container {
- 
+  
   margin: 0 auto;
   width: 90%;
   padding: 0 16px;
@@ -78,7 +78,6 @@ html.has-no-scroll {
 .product-detail-image {
   border-radius: 12px;
   object-fit: cover;
-  height: 360px;
   max-height: 400px;
   
 }

@@ -82,6 +82,7 @@
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 14px;
+  height: 192px;
 }
 
 .cart-item-image-wrap {

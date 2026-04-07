@@ -29,7 +29,7 @@ function buildAssistantReply(input: string, cart: any): string {
   if (!q) return "Напишите вопрос или 'telegram' для заказа.";
 
   if (q.includes("привет") || q.includes("здравствуйте")) {
-    return "Здравствуйте! Напишите 'telegram' для заказа из корзины.";
+    return "Здравствуйте!\\nчем вам помочь?";
   }
 
   if (q.includes("достав")) return "🚚 Доставка 1-3 дня.";
@@ -63,7 +63,7 @@ export default function SupportChat() {
     {
       id: 1,
       role: "assistant",
-      text: "Здравствуйте! Напишите 'telegram' для заказа из корзины.",
+      text: "Здравствуйте! Чем вам помочь?",
     },
   ]);
 
